@@ -1,5 +1,5 @@
 //FIX: remove Jquery
-let letsGoBtn = document.querySelector("#letsGoBtn");
+//let letsGoBtn = document.querySelector("#letsGoBtn");
 let nextHtmlPage = 'Page2.html';
 
 
@@ -123,37 +123,37 @@ const displayApi = (data) => {
   }
 };
 
-let displayResultsBtn = document.createElement("button");
+/*let displayResultsBtn = document.createElement("button");
 displayResultsBtn.textContent = "Display Results";
 displayResultsBtn.setAttribute("style", "padding:2px; margin:5px;");
 document.body.appendChild(displayResultsBtn);
 
-displayResultsBtn.addEventListener("click", formSubmitHandler);
+displayResultsBtn.addEventListener("click", formSubmitHandler);*/
 
-let clearSearchBtn = document.createElement("button");
+/*let clearSearchBtn = document.createElement("button");
 clearSearchBtn.textContent = "Clear Search";
 clearSearchBtn.setAttribute("style", "padding:2px; margin:5px;");
-document.body.appendChild(clearSearchBtn);
+document.body.appendChild(clearSearchBtn);*/
 
 //clearSearchBtn.addEventListener("click",)
 
-getApi();
-getDocApi();
+//getApi();
+//getDocApi();
 
-displayResultsBtn.addEventListener("click", formSubmitHandler);
+//displayResultsBtn.addEventListener("click", formSubmitHandler);
 // getApi();
 // getDocApi()
 
 
-displayResultsBtn.addEventListener("click", formSubmitHandler);
+//displayResultsBtn.addEventListener("click", formSubmitHandler);
 
 //added letsGoBtn "id" to html and my a variable for this. added an event listener that will redirect to
 //page2 html
-letsGoBtn.addEventListener("submit", function (event) {
+letsGoBtn.on("click", function (event) {
   event.preventDefault();
-
-  window.location.assign(nextHtmlPage);
+  
+  window.location.href = "Page2.html";
  
-
-  //window.location.replace(nextHtmlPage);
 })
+
+eventSearchForm.on("submit", formSubmitHandler);
