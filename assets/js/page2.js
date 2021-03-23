@@ -43,8 +43,8 @@ $('input[type="radio"]').prop('radio', false);*/
 
 const getApi = (userSearchEl) => {
   let apiKey = "sHs8K7xQHlo3RLonwkGtJsj8wixf5F5J";
-  //let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date,asc&locale'en-us,*'&keyword"${userSearchEl}"&stateCode""&countryCode=US&startDateTime"03/2021"&endDateTime"05/21/2021"&apikey=${apiKey}`;
-  let apiUrl = `https://app.ticketmaster.com/v2/events.json?&sort&${userSearchEl}&apikey=${apiKey}`;
+  let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date,asc&locale'en-us,*'&keyword"${userSearchEl}"&stateCode""&countryCode=US&startDateTime"03/2021"&endDateTime"05/21/2021"&apikey=${apiKey}`;
+  //let apiUrl = `https://app.ticketmaster.com/v2/events.json?&sort&${userSearchEl}&apikey=${apiKey}`;
 //console.log(input);  
 
 fetch(apiUrl)
