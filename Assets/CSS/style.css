@@ -1,0 +1,34 @@
+body{
+    background-image:url(/Assets/Images/what_now.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.content{
+    font-size: 50px;
+    color: rgb(255, 0, 0);
+    font-family: Impact,Arial, Helvetica, sans-serif;
+    justify-content: center;
+    padding: 50px;
+    margin: 100px;
+    -webkit-text-stroke: 3px rgb(174, 252, 248);
+    display: flex;
+}
+
+button {
+    font-size: 45px;
+    font-family: Impact,Arial, Helvetica, sans-serif; 
+    background-color: rgb(255, 0, 0); 
+    border: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer; /* Pointer/hand icon */
+    width: 15%; 
+    margin-left: 17em;
+    border-radius: 5px; 
+}
+
+
+
+
+
+
