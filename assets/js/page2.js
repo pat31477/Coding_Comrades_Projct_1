@@ -1,5 +1,5 @@
 //FIX: remove Jquery
-//let letsGoBtn = $("#letsGoBtn");
+let letsGoBtn = $("#letsGoBtn");
 //let nextHtmlPage = 'Page2.html';
 let eventId = $("#event-id");
 let eventText = $("#event-text");
@@ -147,11 +147,7 @@ if (userInputEl.val() == event.type) {
 }
 
 
-//currently not used
-let clearSearchBtn = document.createElement('button');
-clearSearchBtn.textContent = "Clear Search";
-clearSearchBtn.setAttribute("style", "padding:2px; margin:5px;");
-document.body.appendChild(clearSearchBtn);
+
 
 
 
