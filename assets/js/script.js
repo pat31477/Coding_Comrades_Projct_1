@@ -1,3 +1,9 @@
+//FIX: remove Jquery
+let letsGoBtn = document.querySelector("#letsGoBtn");
+let nextHtmlPage = 'Page2.html';
+
+
+
 $(document).ready(function(){
   $("#myBtn").click(function(){
     $("#myModal").modal();
@@ -32,7 +38,7 @@ fetch(apiUrl)
 
 const getApi = () => {
   let apiKey = "sHs8K7xQHlo3RLonwkGtJsj8wixf5F5J";
-  let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=name,date,asc&locale'en-us,*'&postalCode&countryCode=US&startDateTime"03/21/2021"&apikey=${apiKey}`;
+  let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=name,date,asc&locale'en-us,*'&postalCode&countryCode=US&startDateTime"03/21/2021&endDateTime"05/21/2021"&apikey=${apiKey}`;
   
 
 fetch(apiUrl)
@@ -137,4 +143,16 @@ document.body.appendChild(clearSearchBtn);
 // getApi();
 // getDocApi()
 
+
 displayResultsBtn.addEventListener("click", formSubmitHandler);
+
+//added letsGoBtn "id" to html and my a variable for this. added an event listener that will redirect to
+//page2 html
+letsGoBtn.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  window.location.assign(nextHtmlPage);
+ 
+
+  //window.location.replace(nextHtmlPage);
+})
