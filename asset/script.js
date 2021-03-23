@@ -95,7 +95,7 @@ for (var i = 0; i < mostRecentEvents.length; i++) {
 
 
 
-//getApi();
+getApi();
 
 
 let displayResultsBtn = document.createElement("button");
@@ -115,7 +115,7 @@ clearSearchBtn.setAttribute("style", "padding:2px; margin:5px;");
 document.body.appendChild(clearSearchBtn);
 
 
-//clearSearchBtn.addEventListener("click",)
+clearSearchBtn.addEventListener("click",)
 
 
 
