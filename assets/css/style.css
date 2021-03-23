@@ -20,3 +20,20 @@
     width: 100%;
     text-align: center;
 }
+
+.modal-content {
+
+  width: max-content;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: blue;
+  border-color: blue;
+}
+
+.btn-success:hover {
+  color: #fff;
+  background-color: #02f502;
+  border-color: #00ff00;
+}

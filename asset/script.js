@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-$(document).ready(function(){
-    $("#myBtn").click(function(){
-      $("#myModal").modal();
-    });
-  });
-=======
 
 
 const formSubmitHandler = (events) => {
@@ -124,4 +117,3 @@ clearSearchBtn.addEventListener("click",)
 
 
 
->>>>>>> 90ac8800fe3ec30bb7b662ab8f596f9a8c8469a9
