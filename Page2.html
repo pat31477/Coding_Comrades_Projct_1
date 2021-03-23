@@ -4,50 +4,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
-        type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link rel="stylesheet" href="./assets/css/Page2.css">
     <title>Project 1 Page 2</title>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light static-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
-            <a class="btn btn-primary" href="#">Sign In</a>
-        </div>
-    </nav>
+    <!-- Navigation Bar, Fix the positioning and alignment -->
+    <class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand">Navbar</a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        </nav>
 
-    <!-- Masthead -->
-    <header class="masthead text-white text-center">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-9 mx-auto">
-                    <h1 class="mb-5" style="color: white">Build a landing page for your business or project and generate more leads!</h1>
-                </div>
-                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                    <form>
-                        <div class="form-row">
-                            <div class="col-12 col-md-9 mb-2 mb-md-0">
-                                <input type="email" class="form-control form-control-lg"
-                                    placeholder="Enter your email...">
+        <!-- header, fix the positioning and alignment -->
+        <header class="masthead text-white text-center">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 mx-auto">
+                        <h1 class="mb-5" style="color: white">What Do You Want To Do?</h1>
+                    </div>
+                    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                        <form>
+                            <div class="form-row">
+                                <div class="col-12 col-md-9 mb-2 mb-md-0">
+                                    <input class="form-control form-control-lg" type="text" placeholder="Search">
+                                </div>
+                                <div class="col-12 col-md-3">
+                                    <button style="color: blue" type="submit"
+                                        class="btn btn-block btn-lg btn-primary">Search</button>
+                                </div>
                             </div>
-                            <div class="col-12 col-md-3">
-                                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- main content -->
+        <div id="wrap">
+            <div id="main" class="container">
+                <div class="row">
+                    <div id="sidebar" class="col-md-2">
+                        <div class="card mb-4 box-shadow">
+                            <div class="side-bar">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center rating-bar-btn-group">
+                                        <div class="bar-container">
+                                            <button type="button" class="btn btn-sm btn-outline-primary"><i
+                                                    class="fas fa-dollar-sign"></i></button>
+                                            <button type="button" class="btn btn-sm btn-outline-primary"><i
+                                                    class="fas fa-dollar-sign"></i><i
+                                                    class="fas fa-dollar-sign"></i></button>
+                                            <button type="button" class="btn btn-sm btn-outline-primary"><i
+                                                    class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i
+                                                    class="fas fa-dollar-sign"></i></button>
+                                            <button type="button" class="btn btn-sm btn-outline-primary"><i
+                                                    class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i
+                                                    class="fas fa-dollar-sign"></i><i
+                                                    class="fas fa-dollar-sign"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </form>
+                        <div class="card mb-4 box-shadow">
+                            <h4>Distance:</h4>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                    value="option1" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Driving (5 mi.)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                    value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Biking (2 mi.)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                    value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Walking (1 mi.)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                    value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Within 4 Blocks
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fix and add more features to display the suggestion box -->
+                    <div class="col-md-5">
+                        <div class="card mb-4 box-shadow">
+                            <div style="width: 50rem;" border-style="1px solid black">
+                                <img class="card-img-top" src="./img/shanice-garcia-TO69trRWlrI-unsplash.jpg"
+                                    alt="Card image cap" width="386" height="280"
+                                    style="vertical-align:middle;margin:50px 10px 10px 50px">
+                                <div class="card-body-1">
+                                    <h5 class="card-title">Restaurant Name</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the
+                                        bulk
+                                        of
+                                        the
+                                        card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="card mb-4 box-shadow">
+                            <div class="card-2" style="width: 50rem;">
+                                <img class="card-img-top" src="./img/marvin-meyer-IB5bld_weak-unsplash.jpg"
+                                    alt="Card image cap" width="386" height="280"
+                                    style="vertical-align:middle;margin:50px 10px 10px 50px">
+                                <div class="card-body-2">
+                                    <h5 class="card-title">Event Name</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the
+                                        bulk
+                                        of
+                                        the
+                                        card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
 
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+        <!-- fix footer positioning -->
+        <footer class="footer" style="background-color:#c2c2c2">
 </body>
 
 </html>
