@@ -30,7 +30,7 @@ $('input[type="radio"]').prop('radio', false);*/
 
 
   if (userSearchEl) {
-  getApi(userSearchEl);
+  getEvents(userSearchEl);
   //getDocApi(userSearchEl);
 } else {
   $('#submit-btn').disabled = true;
@@ -41,7 +41,7 @@ $('input[type="radio"]').prop('radio', false);*/
 
 
 
-const getApi = (userSearchEl) => {
+const getEvents = (userSearchEl) => {
   let apiKey = "sHs8K7xQHlo3RLonwkGtJsj8wixf5F5J";
   let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date,asc&locale'en-us,*'&keyword=${userSearchEl}&stateCode""&countryCode=US&startDateTime"03/2021"&endDateTime"05/21/2021"&apikey=${apiKey}`;
   //let apiUrl = `https://app.ticketmaster.com/v2/events.json?&sort=date,name,asc&apikey=${apiKey}`;
@@ -53,7 +53,7 @@ fetch(apiUrl)
 .then(data => {
   console.log(data);
   console.log(data._embedded);
-  displayApi(data._embedded, userSearchEl);
+  displayEvents(data._embedded, userSearchEl);
 
 })
 
@@ -61,7 +61,8 @@ fetch(apiUrl)
 
 
 //displaying data from the fetch request of Ticketmaster's api
-const displayApi = (data, userSearchEl) => {
+const displayEvents = (data, userSearchEl) => {
+  $("#submit-btn").disabled = false;
   console.log(userSearchEl);
   console.log(data);
 //variable set to the events object inside the data
@@ -72,7 +73,7 @@ let mostRecentEvents = events;
 
 //console.log(mostRecentEvents)
 
-for (var i = 0; i < mostRecentEvents.length; i++) {
+/*for (var i = 0; i < mostRecentEvents.length; i++) {
   //getting event name and creating an element
   //let newEventTitle = document.createElement('h3');
   //setting textContent
@@ -114,18 +115,9 @@ for (var i = 0; i < mostRecentEvents.length; i++) {
       console.log("no price information for this event");
   }
   
-  /*if (mostRecentEvents[i].images) {
-      let newEventImage = document.createElement('img');
-      let newEventUrl = mostRecentEvents[i].images[1].url;
-      newEventImage.setAttribute("src", newEventUrl);
-      document.body.appendChild(newEventImage);
-      console.log(mostRecentEvents[i].images[1].url);
-  } else {
-      console.log("there are no images to display for this event");
-  }*/
+}*/
 
 
-}
 mostRecentEvents.filter(event => {
   let searchedEvent = event;
   //console.log(searchedEvent.images[0]);
@@ -162,6 +154,8 @@ letsGoBtn.on("click", function (event) {
   window.location.href = "Page2.html";
  
 })
+//working on event listener on first page html
+//letsGoBtn.on("click", formSubmitHandler);
 
 eventSearchForm.on("submit", formSubmitHandler);
 
