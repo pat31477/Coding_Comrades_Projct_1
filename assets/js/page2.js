@@ -44,7 +44,7 @@ $('input[type="radio"]').prop('radio', false);*/
 const getApi = (userSearchEl) => {
   let apiKey = "sHs8K7xQHlo3RLonwkGtJsj8wixf5F5J";
   let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date,asc&locale'en-us,*'&keyword"${userSearchEl}"&stateCode""&countryCode=US&startDateTime"03/2021"&endDateTime"05/21/2021"&apikey=${apiKey}`;
-  //let apiUrl = `https://app.ticketmaster.com/v2/events.json?&sort&${userSearchEl}&apikey=${apiKey}`;
+  //let apiUrl = `https://app.ticketmaster.com/v2/events.json?&sort=date,name,asc&apikey=${apiKey}`;
 //console.log(input);  
 
 fetch(apiUrl)
@@ -53,7 +53,7 @@ fetch(apiUrl)
 .then(data => {
   console.log(data);
   console.log(data._embedded);
-  displayApi(data._embedded);
+  displayApi(data._embedded, userSearchEl);
 
 })
 
@@ -61,14 +61,16 @@ fetch(apiUrl)
 
 
 //displaying data from the fetch request of Ticketmaster's api
-const displayApi = (data) => {
+const displayApi = (data, userSearchEl) => {
+  console.log(userSearchEl);
+  console.log(data);
 //variable set to the events object inside the data
 let events = data.events;
 //slicing first 3 events
 let mostRecentEvents = events;
-mostRecentEvents.length;
+//mostRecentEvents.length;
 
-console.log(mostRecentEvents)
+//console.log(mostRecentEvents)
 
 for (var i = 0; i < mostRecentEvents.length; i++) {
   //getting event name and creating an element
