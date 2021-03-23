@@ -4,8 +4,8 @@ let nextHtmlPage = 'Page2.html';
 
 
 
-$(document).ready(function(){
-  $("#enterBtn").click(function(){
+$(document).ready(function () {
+  $("#enterBtn").click(function () {
     $("#myModal").modal();
   });
 });
@@ -32,9 +32,9 @@ var requestOptions = {
   redirect: "follow",
 };
 fetch(
-  "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=Brooklyn",
-  requestOptions
-)
+    "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=Brooklyn",
+    requestOptions
+  )
   .then((response) => response.json())
   .then((result) => console.log(result))
   .catch((error) => console.log("error", error));
@@ -52,14 +52,13 @@ const getDocApi = () => {
 };
 
 
-
 //added letsGoBtn "id" to html and my a variable for this. added an event listener that will redirect to
 //page2 html
 letsGoBtn.on("click", function (event) {
   event.preventDefault();
-  
+
   window.location.href = "Page2.html";
- 
+
 })
 
 eventSearchForm.on("submit", formSubmitHandler);

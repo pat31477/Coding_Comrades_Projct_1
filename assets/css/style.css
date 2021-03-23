@@ -51,7 +51,7 @@
 }
 
 body{
-    background-image:url(what_now.png);
+    background-image:url(../../img/what_now.png);
     background-size: cover;
     background-attachment: fixed;
 }
