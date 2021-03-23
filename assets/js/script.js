@@ -5,7 +5,7 @@ let nextHtmlPage = 'Page2.html';
 
 
 $(document).ready(function(){
-  $("#myBtn").click(function(){
+  $("#enterBtn").click(function(){
     $("#myModal").modal();
   });
 });
