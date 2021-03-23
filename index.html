@@ -12,7 +12,7 @@
 <div class="container">
 
 
-  <button type="button" class="btn btn-default btn-lg" id="myBtn">Lets Go!</button>
+  <button type="button" class="btn btn-default btn-lg" id="myBtn">Start</button>
 
 
   <div class="modal fade" id="myModal" role="dialog">
@@ -25,7 +25,8 @@
           <h4><span><i class="icon-small icon-pizza"></i> </span> What Do You Want to Do?</h4>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
-          <form role="form">
+          <!--ben changed the form name-->
+          <form name="login-form" >
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Type of food:</label>
               <input type="text" class="form-control" id="usrname" placeholder="Type of Food">
@@ -35,7 +36,7 @@
               <input type="text" class="form-control" id="zipCode" placeholder="Zip Code">
             </div>
   
-              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Lets Go!</button>
+              <button type="submit" id="letsGoBtn" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Lets Go!</button>
           </form>
         </div>
       
