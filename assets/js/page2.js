@@ -41,23 +41,6 @@ $('input[type="radio"]').prop('radio', false);*/
 
 
 
-/*const getDocApi = () => {
-  
-  let apiUrl = `https://api.documenu.com/v2/restaurant/4072702673999819?key=a414d27ec8621fd597b54e3526b1c8a1&zip_code&restaurant_website`;
-  
-
-fetch(apiUrl)
-.then(response => response.json())
-
-.then(data => {
-  console.log(data);
-  console.log(data._embedded);
-  
-
-})
-
-}*/
-
 const getApi = (userSearchEl) => {
   let apiKey = "sHs8K7xQHlo3RLonwkGtJsj8wixf5F5J";
   let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date,asc&locale'en-us,*'&keyword"${userSearchEl}"&stateCode""&countryCode=US&startDateTime"03/2021"&endDateTime"05/21/2021"&apikey=${apiKey}`;
@@ -112,8 +95,7 @@ for (var i = 0; i < mostRecentEvents.length; i++) {
   newEventSalesInfo.textContent = "Sales end on: " +  mostRecentEvents[i].sales.public.endDateTime;
   console.log(newEventSalesInfo);
 
-  //let newEventPrice = document.createElement('h5');
-  //newEventPrice.textContent = mostRecentEvents[i].priceRanges[0].min;
+
 
   if (mostRecentEvents[i].priceRanges) {
       console.log(mostRecentEvents[i].priceRanges[0].min);
@@ -165,30 +147,11 @@ if (userInputEl.val() == event.type) {
 }
 
 
-
-
-/*let displayResultsBtn = document.createElement("button");
-displayResultsBtn.textContent = "Display Results";
-displayResultsBtn.setAttribute("style", "padding:2px; margin:5px;");
-document.body.appendChild(displayResultsBtn);*/
-
-//displayResultsBtn.addEventListener("click", formSubmitHandler);
-
-
-
-
-
+//currently not used
 let clearSearchBtn = document.createElement('button');
 clearSearchBtn.textContent = "Clear Search";
 clearSearchBtn.setAttribute("style", "padding:2px; margin:5px;");
 document.body.appendChild(clearSearchBtn);
-
-
-//clearSearchBtn.addEventListener("click",)
-
-
-// getApi();
-// getDocApi()
 
 
 
@@ -197,13 +160,9 @@ document.body.appendChild(clearSearchBtn);
 //page2 html
 letsGoBtn.on("click", function (event) {
   event.preventDefault();
-  //add If conditional statement
-  //if ()
-
+  
   window.location.href = "Page2.html";
  
-
-  //window.location.replace(nextHtmlPage);
 })
 
 eventSearchForm.on("submit", formSubmitHandler);

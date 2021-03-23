@@ -31,13 +31,13 @@
                         <h1 class="mb-5" style="color: white">What Do You Want To Do?</h1>
                     </div>
                     <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                        <form>
+                        <form id="event-search-form">
                             <div class="form-row">
                                 <div class="col-12 col-md-9 mb-2 mb-md-0">
-                                    <input class="form-control form-control-lg" type="text" placeholder="Search">
+                                    <input id="user-search" class="form-control form-control-lg" name="search-input" type="text" placeholder="Search">
                                 </div>
                                 <div class="col-12 col-md-3">
-                                    <button style="color: blue" type="submit"
+                                    <button id="submit-btn" style="color: blue" type="submit"
                                         class="btn btn-block btn-lg btn-primary">Search</button>
                                 </div>
                             </div>
@@ -130,12 +130,12 @@
                     <div class="col-md-5">
                         <div class="card mb-4 box-shadow">
                             <div class="card-2" style="width: 50rem;">
-                                <img class="card-img-top" src="./img/marvin-meyer-IB5bld_weak-unsplash.jpg"
+                                <img class="card-img-top" id="event-id" src=""
                                     alt="Card image cap" width="386" height="280"
                                     style="vertical-align:middle;margin:50px 10px 10px 50px">
                                 <div class="card-body-2">
-                                    <h5 class="card-title">Event Name</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                    <h5 id="event-title" class="card-title">Event Name</h5>
+                                    <p id="event-text" class="card-text">Some quick example text to build on the card title and make up
                                         the
                                         bulk
                                         of
@@ -153,5 +153,7 @@
         <!-- fix footer positioning -->
         <footer class="footer" style="background-color:#c2c2c2">
 </body>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="assets/js/page2.js"></script>
+<script src="assets/js/script.js"></script>
 </html>
