@@ -141,8 +141,8 @@ console.log(searchedEvent);
 mostRecentEvents.forEach((events,index) => {
   console.log(events)
   
-  //$(`eventTitle${index+1}`).html(events.name);
-  eventTitle.html(events.name);
+  $(`#event${index+1}`).html(events.name);
+  //eventTitle.html(events.name);
   eventText.html(events.info)
 
 })
