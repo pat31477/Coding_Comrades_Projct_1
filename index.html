@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -23,43 +24,43 @@
         <h3 contenteditable spellcheck="false">Find restaurants, bars, and events happening near you...</h3>
       </p>
     </div>
-    <button type="button" class="btn btn-default btn-lg" id="enterBtn">Enter!</button>
+    <button type="button" class="btn btn-default btn-lg enterBtn" id="enterBtn">Enter!</button>
 
 
-    <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
+  </div>
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
 
 
-        <div class="modal-content">
-          <div class="modal-header" style="padding:35px 50px;">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4><span><i class="icon-small icon-pizza"></i> </span> What Do You Want to Do?</h4>
-          </div>
-          <div class="modal-body" style="padding:40px 50px;">
-            <!--ben changed the form name-->
-            <form name="login-form">
-              <div class="form-group">
-                <label for="usrname"><span><i class="icon-small icon-pizza"></i></span> Type of food:</label>
-                <input type="text" class="form-control" id="usrname" placeholder="Type of Food">
-              </div>
-              <div class="form-group">
-                <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Zip Code:</label>
-                <input type="text" class="form-control" id="zipCode" placeholder="Zip Code">
-              </div>
+      <div class="modal-content rounded-0">
+        <div class="modal-header rounded-0" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4> What Do You Want to Do?</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <!--ben changed the form name-->
+          <form name="login-form">
+            <div class="form-group">
+              <label for="usrname"><span><i class="icon-small icon-pizza"></i></span> Type of food:</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Type of Food">
+            </div>
+            <div class="form-group">
+              <label for="psw"> <i class="icon-small icon-pizza"></i>></span> Zip Code:</label>
+              <input type="text" class="form-control" id="zipCode" placeholder="Zip Code">
+            </div>
 
-              <button type="submit" id="letsGoBtn" class="btn btn-success btn-block"><span
-                  class="glyphicon glyphicon-off"></span> Lets Go!</button>
-            </form>
-          </div>
-
+            <button type="submit" id="letsGoBtn" class="btn btn-success btn-block"><span
+                class="glyphicon glyphicon-off"></span> Lets Go!</button>
+          </form>
         </div>
 
       </div>
+
     </div>
   </div>
   
 </body>
-<script src="assets/js/docu.js"></script>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/page2.js"></script>
 </body>
