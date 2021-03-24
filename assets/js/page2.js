@@ -19,14 +19,15 @@ $(document).ready(function(){
 
 const savedSearches = (userSearchEl) => {
   let button1 = $('<button>');
-  button1.text(userSearchEl.val());
+  button1.text(userSearchEl);
   //previousSearchEl.addClass('list-group');
   previousSearchEl.append(button1);;
   button1.on('click', function (event) {
+    let eventButton = $(this).text();
+
+    getEvents(eventButton);
     event.preventDefault();
     event.stopPropagation();
-    let eventButton = $(this).text();
-    getEvents(eventButton);
   })
 
 }
@@ -59,7 +60,7 @@ $('input[type="radio"]').prop('radio', false);*/
   $('#submit-btn').disabled = true;
 
 }
-savedSearches(userInputEl);
+savedSearches(userSearchEl);
 let storedEvent = localStorage.getItem("events");
 storedEvent = JSON.parse(storedEvent) || [];
 
