@@ -1,11 +1,12 @@
 .modal-header, h4, .close {
-    background-color: #8854ee;
+    background-color: rgb(255, 0, 0);
     color:white !important;
     text-align: center;
     font-size: 30px;
+    border-radius: 15px 15px 0 0;
     
   }
-  #myBtn {  } 
+ 
 
   #enterBtn {
 
@@ -20,7 +21,7 @@
     width: 10%; 
     border-radius: 5px;
     -webkit-text-stroke: 1.5px rgb(0, 0, 0);
-    position: fixed; top:50%; left:50%;
+    position: fixed; top:55%; left:46%;
   }
 
   label {
@@ -34,20 +35,22 @@
 }
 
 .modal-content {
-    
+  margin-left: 85px;
+  margin-top: 300px;
   width: max-content;
+  border-radius: 20px;
 }
 
 .btn-success {
   color: #fff;
-  background-color: blue;
-  border-color: blue;
+  background-color: #ff0000;
+  border-color: #fff
 }
 
 .btn-success:hover {
-  color: rgb(6, 255, 18);
-  background-color: #02f502;
-  border-color: #00ff00;
+  color: #fff;
+  background-color:#ff0000;
+  border-color: ##fff;
 }
 
 body{
@@ -58,10 +61,11 @@ body{
 
 .content{
   justify-content: center;
-  padding: 50px;
-  margin: 100px;
+  padding: 30px;
+  margin: 25px;
   display: flex;
-  width: 100%
+  width: 100%;
+  border-radius: 15px;
 }
 
 h1{
@@ -70,4 +74,9 @@ h1{
   font-family: Impact,Arial, Helvetica, sans-serif;
   -webkit-text-stroke: 3px rgb(174, 252, 248);
   text-align: center;
+}
+
+.contentContainer {
+
+  margin 50px;
 }
