@@ -68,17 +68,16 @@ const displayEvents = (data, userSearchEl) => {
 //variable set to the events object inside the data
 let events = data.events;
 //slicing first 3 events
-let mostRecentEvents = events;
+let mostRecentEvents = events.slice(0,4);
 //mostRecentEvents.length;
 
-//console.log(mostRecentEvents)
+console.log(mostRecentEvents)
 
-/*for (var i = 0; i < mostRecentEvents.length; i++) {
+for (var i = 0; i < mostRecentEvents.length; i++) {
   //getting event name and creating an element
   //let newEventTitle = document.createElement('h3');
   //setting textContent
   eventTitle.textContent = mostRecentEvents[i].name;
-
   console.log(eventTitle);
   //getting event date and creating element to store
   let newEventDate = document.createElement('h6');
@@ -115,28 +114,43 @@ let mostRecentEvents = events;
       console.log("no price information for this event");
   }
   
-}*/
+}
 
 
-mostRecentEvents.filter(event => {
+/*mostRecentEvents.filter(event => {
   let searchedEvent = event;
+  console.log(searchedEvent);
   //console.log(searchedEvent.images[0]);
   let searchEventImg = searchedEvent.images[0].url;
-  console.log(searchedEvent.dates.start.localDate);
+  console.log(searchedEvent.priceRanges[0].min);
  console.log(event.type)
 console.log(searchedEvent);
 
-if (userInputEl.val() == event.type) {
-  console.log(userInputEl.val());
-}
 
+//let eventDiv = $("<p>");
+//eventDiv.append($(".card-body"));
+//eventDiv.html(searchedEvent.dates.start.localDate);
   $('#event-id').attr("src", searchEventImg);
   $('#event-title').html(searchedEvent.name)
-  $('#event-text').html(searchedEvent.info)
+  $('#event-text').html(searchedEvent.info);
+ 
 
   ;
 
+})*/
+mostRecentEvents.forEach((events,index) => {
+  console.log(events)
+  
+  //$(`eventTitle${index+1}`).html(events.name);
+  eventTitle.html(events.name);
+  eventText.html(events.info)
+
 })
+
+
+
+
+
 
 }
 
