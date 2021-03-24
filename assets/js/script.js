@@ -1,5 +1,5 @@
 //FIX: remove Jquery
-//let letsGoBtn = document.querySelector("#letsGoBtn");
+let letsGoBtn = $("#letsGoBtn");
 let nextHtmlPage = 'Page2.html';
 
 
@@ -61,4 +61,6 @@ letsGoBtn.on("click", function (event) {
 
 })
 
-eventSearchForm.on("submit", formSubmitHandler);
+// eventSearchForm.on("submit", formSubmitHandler);
+
+formSubmitHandler()
