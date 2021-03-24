@@ -64,11 +64,12 @@ fetch(apiUrl)
 const displayEvents = (data, userSearchEl) => {
   $("#submit-btn").disabled = false;
   console.log(userSearchEl);
-  console.log(data);
+  console.log(data.events);
 //variable set to the events object inside the data
 let events = data.events;
 //slicing first 3 events
-let mostRecentEvents = events.slice(0,4);
+let mostRecentEvents = events.filter(event => event.info);
+console.log(mostRecentEvents);
 //mostRecentEvents.length;
 
 console.log(mostRecentEvents)
@@ -130,6 +131,7 @@ console.log(searchedEvent);
 //let eventDiv = $("<p>");
 //eventDiv.append($(".card-body"));
 //eventDiv.html(searchedEvent.dates.start.localDate);
+
   $('#event-id').attr("src", searchEventImg);
   $('#event-title').html(searchedEvent.name)
   $('#event-text').html(searchedEvent.info);
@@ -139,13 +141,25 @@ console.log(searchedEvent);
 
 })*/
 mostRecentEvents.forEach((events,index) => {
-  console.log(events)
+  console.log(events.dates.start.localDate)
+
+  let eventImg = $('<img>');
   
-  $(`#event${index+1}`).html(events.name);
+  let eventUrl = events.images[1].url;
+  
+  eventImg.attr("style", "width:8em;", "ml-5");
+  eventImg.attr("src", eventUrl);
+  $('#event1').attr('ml-5');
+  $(`#event${index+1}`).html(events.name + `\n` + events.info + events.dates.start.localDate).addClass("list-group-item", "ml-5");
+  $(`#event${index+1}`).append(eventImg);
+  //$(`#eventTitle${index+1}`).html(events.info);
   //eventTitle.html(events.name);
   eventText.html(events.info)
 
 })
+/*mostRecentEvents.forEach((events,index) => {
+  $(`#event1Text${index+1}`).html(events.info);
+})*/
 
 
 
