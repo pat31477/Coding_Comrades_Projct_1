@@ -182,7 +182,7 @@ mostRecentEvents.forEach((events,index) => {
   eventImg.attr("src", eventUrl);
   $('#event1').attr('ml-5');
   $(`#event${index+1}`).html(events.name + `\n` + events.info + events.dates.start.localDate).addClass("list-group-item", "ml-5");
-  $(`#event${index+1}`).append(eventImg);
+  //$(`#event${index+1}`).append(eventImg);
   //$(`#eventTitle${index+1}`).html(events.info);
   //eventTitle.html(events.name);
   eventText.html(events.info)
