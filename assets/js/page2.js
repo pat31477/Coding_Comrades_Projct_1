@@ -7,6 +7,7 @@ let eventTitle = $("#event-title");
 let eventSearchForm = $("#event-search-form");
 let userInputEl = $('input[name="search-input"]');
 let userSearchEl = userInputEl.val();
+let previousSearchEl = $('#previous-search-el');
 
 
 
@@ -15,6 +16,28 @@ $(document).ready(function(){
   $("#myBtn").click(function(){
     $("#myModal").modal();
   });
+
+const savedSearches = (userSearchEl) => {
+  let button1 = $('<button>');
+  button1.text(userSearchEl.val());
+  //previousSearchEl.addClass('list-group');
+  previousSearchEl.append(button1);;
+  button1.on('click', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    let eventButton = $(this).text();
+    getEvents(eventButton);
+  })
+
+}
+
+let storedEvent = localStorage.getItem("events");
+storedEvent = JSON.parse(storedEvent) || [];
+for (var i = 0; i < storedEvent.length; i++) {
+  savedSearches(storedEvent[i]);
+}
+
+
 
 
 
@@ -36,6 +59,13 @@ $('input[type="radio"]').prop('radio', false);*/
   $('#submit-btn').disabled = true;
 
 }
+savedSearches(userInputEl);
+let storedEvent = localStorage.getItem("events");
+storedEvent = JSON.parse(storedEvent) || [];
+
+storedEvent.push(userSearchEl);
+let stringifiedEvents = JSON.stringify(storedEvent);
+localStorage.setItem("events", stringifiedEvents);
 
 }
 
@@ -74,7 +104,7 @@ console.log(mostRecentEvents);
 
 console.log(mostRecentEvents)
 
-for (var i = 0; i < mostRecentEvents.length; i++) {
+/*for (var i = 0; i < mostRecentEvents.length; i++) {
   //getting event name and creating an element
   //let newEventTitle = document.createElement('h3');
   //setting textContent
@@ -115,7 +145,7 @@ for (var i = 0; i < mostRecentEvents.length; i++) {
       console.log("no price information for this event");
   }
   
-}
+}*/
 
 
 /*mostRecentEvents.filter(event => {
@@ -169,7 +199,19 @@ mostRecentEvents.forEach((events,index) => {
 }
 
 
+let clearHistoryButton = $('<button>');
+clearHistoryButton.text("Clear History");
+previousSearchEl.append(clearHistoryButton);
 
+const removeItem = (event) => {
+  localStorage.clear();
+  $(event.target).siblings().remove();
+  location.reload();
+  //console.log(event.children());
+}
+
+
+clearHistoryButton.on("click", removeItem);
 
 
 
