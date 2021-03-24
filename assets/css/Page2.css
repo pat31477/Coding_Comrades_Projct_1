@@ -13,7 +13,7 @@ header.masthead {
     background-color: #343a40;
     background: url("../../img/hristo-sahatchiev-x7p8Izu3rPM-unsplash\ \(1\).jpg") no-repeat center center;
     background-size: cover;
-    padding-top: 8rem;
+    
     padding-bottom: 8rem;
 }
 
@@ -78,3 +78,29 @@ header.masthead {
     padding-top: 20px;
     color: #fff;
 }
+
+.previousSearch {
+    flex-direction: column;
+    display: flex;
+    width: 13%;
+    
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 70px;
+}
+.searchContent {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.userInput{
+    50%
+}
+
+
