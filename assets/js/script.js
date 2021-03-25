@@ -1,13 +1,19 @@
 //FIX: remove Jquery
-// let letsGoBtn = $("#letsGoBtn");
+ //let letsGoBtn = $("#letsGoBtn");
 let nextHtmlPage = 'Page2.html';
 
 
 
  $(document).ready(function () {
+<<<<<<< HEAD
  $("#enterBtn").click(function () {
   $("#myModal").modal();
   });
+=======
+   $("#enterBtn").click(function () {
+     $("#myModal").modal();
+   });
+>>>>>>> a1b6da69bfa913e688c36ad1f3c25adcfce90b44
  });
 
 // const formSubmitHandler = (events) => {
@@ -54,12 +60,12 @@ const getDocApi = () => {
 
 //added letsGoBtn "id" to html and my a variable for this. added an event listener that will redirect to
 //page2 html
-letsGoBtn.on("click", function (event) {
-  event.preventDefault();
+// letsGoBtn.on("click", function (event) {
+//   event.preventDefault();
 
-  window.location.href = "Page2.html";
+//   window.location.href = "Page2.html";
 
-})
+// })
 
 // eventSearchForm.on("submit", formSubmitHandler);
 
