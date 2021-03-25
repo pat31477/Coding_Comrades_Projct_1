@@ -8,7 +8,8 @@ let eventSearchForm = $("#event-search-form");
 let userInputEl = $('input[name="search-input"]');
 let userSearchEl = userInputEl.val();
 let previousSearchEl = $('#previous-search-el');
-
+let nextHtmlPage = 'Page2.html';
+  let enterBtn = $("#enterBtn")
 
 
 
@@ -16,6 +17,16 @@ $(document).ready(function(){
   $("#myBtn").click(function(){
     $("#myModal").modal();
   });
+
+ 
+     $("#enterBtn").click(function () {
+       $("#myModal").modal();
+     });
+  
+
+
+
+
 
 const savedSearches = (userSearchEl) => {
   let button1 = $('<button>');
@@ -184,7 +195,7 @@ clearHistoryButton.on("click", removeItem);
    window.location.href = "Page2.html";
  
 })
-letsGoBtn.on("click", formSubmitHandler);
+//letsGoBtn.on("click", formSubmitHandler);
 
 eventSearchForm.on("submit", formSubmitHandler);
 
