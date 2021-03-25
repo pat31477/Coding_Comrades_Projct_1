@@ -108,10 +108,10 @@ background-attachment: fixed;
 }
 
 h3 {
-color: rgba(38, 245, 217, 0.918);
+color: rgba(121, 248, 231, 0.918);
 padding: .5px 78px 1px;
 font-size: 31px;
--webkit-text-stroke: .7px rgb(236, 16, 218);
+-webkit-text-stroke: 1px rgb(73, 25, 187);
 }
 
 h1 {

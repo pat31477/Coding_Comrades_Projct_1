@@ -6,13 +6,9 @@
 
 body {
     height: 100%;
-<<<<<<< HEAD
     background-image: url(../../img/steel.JPG);
     background-size: cover;
     background-attachment: fixed;
-=======
-    background-image:url();
->>>>>>> 4c5e5cca6f7611280617c89ee8f4d83e02ccb07b
 }
 
 header.masthead {
