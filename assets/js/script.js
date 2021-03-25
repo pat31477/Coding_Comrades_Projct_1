@@ -5,15 +5,9 @@ let nextHtmlPage = 'Page2.html';
 
 
  $(document).ready(function () {
-<<<<<<< HEAD
- $("#enterBtn").click(function () {
-  $("#myModal").modal();
-  });
-=======
    $("#enterBtn").click(function () {
      $("#myModal").modal();
    });
->>>>>>> a1b6da69bfa913e688c36ad1f3c25adcfce90b44
  });
 
 // const formSubmitHandler = (events) => {
