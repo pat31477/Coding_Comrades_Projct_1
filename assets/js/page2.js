@@ -94,103 +94,47 @@ fetch(apiUrl)
 //displaying data from the fetch request of Ticketmaster's api
 const displayEvents = (data, userSearchEl) => {
   $("#submit-btn").disabled = false;
-  console.log(userSearchEl);
-  console.log(data.events);
+  //console.log(userSearchEl);
+  //console.log(data.events);
 //variable set to the events object inside the data
-let events = data.events;
-//slicing first 3 events
-let mostRecentEvents = events.filter(event => event.info);
-console.log(mostRecentEvents);
-//mostRecentEvents.length;
+let newEvents = data.events;
 
-console.log(mostRecentEvents)
+//let newEvents = events.filter(event => event.info)
+console.log(newEvents);
 
-/*for (var i = 0; i < mostRecentEvents.length; i++) {
-  //getting event name and creating an element
-  //let newEventTitle = document.createElement('h3');
-  //setting textContent
-  eventTitle.textContent = mostRecentEvents[i].name;
-  console.log(eventTitle);
-  //getting event date and creating element to store
-  let newEventDate = document.createElement('h6');
-  //setting date textContent
-  newEventDate.textContent = mostRecentEvents[i].dates.start.localDate;
-  console.log(newEventDate);
+let eventItems = $('#events .list-group-item');
 
-  let newEventTime = document.createElement('h6');
-  newEventTime.textContent = mostRecentEvents[i].dates.start.localTime;
-  console.log(newEventTime);
-
-  let newEventInfo = document.createElement('h6');
-  newEventInfo.textContent = mostRecentEvents[i].info;
-  console.log(newEventInfo);
-
-  let newEventSalesInfo = document.createElement('h6');
-  newEventSalesInfo.textContent = "Sales end on: " +  mostRecentEvents[i].sales.public.endDateTime;
-  console.log(newEventSalesInfo);
+eventItem = eventItems.first();
+console.log(eventItem);
 
 
-
-  if (mostRecentEvents[i].priceRanges) {
-      console.log(mostRecentEvents[i].priceRanges[0].min);
-      console.log(mostRecentEvents[i].priceRanges[0].max);
-      if (mostRecentEvents[i].priceRanges[0].min && mostRecentEvents[i].priceRanges[0].max < 25) {
-        console.log("$");
-      } else if (mostRecentEvents[i].priceRanges[0].min && mostRecentEvents[i].priceRanges[0].max > 25 && mostRecentEvents[i].priceRanges[0].min && mostRecentEvents[i].priceRanges[0].max < 50) {
-        console.log("$$")
-      } else if (mostRecentEvents[i].priceRanges[0].min && mostRecentEvents[i].priceRanges[0].max > 50) {
-        console.log("$$$");
-      }
-      //newEventPrice.textContent = mostRecentEvents[i].priceRanges[0].min
-  } else {
-      console.log("no price information for this event");
-  }
+newEvents.forEach((events, index) => {
   
-}*/
-
-
-/*mostRecentEvents.filter(event => {
-  let searchedEvent = event;
-  console.log(searchedEvent);
-  //console.log(searchedEvent.images[0]);
-  let searchEventImg = searchedEvent.images[0].url;
-  console.log(searchedEvent.priceRanges[0].min);
- console.log(event.type)
-console.log(searchedEvent);
-
-
-//let eventDiv = $("<p>");
-//eventDiv.append($(".card-body"));
-//eventDiv.html(searchedEvent.dates.start.localDate);
-
-  $('#event-id').attr("src", searchEventImg);
-  $('#event-title').html(searchedEvent.name)
-  $('#event-text').html(searchedEvent.info);
- 
-
-  ;
-
-})*/
-mostRecentEvents.forEach((events,index) => {
-  console.log(events.dates.start.localDate)
-
+    
+  $(`#list-text${index+1}`).text(events.name)
+  
   let eventImg = $('<img>');
-  
-  let eventUrl = events.images[1].url;
+  let eventImageUrl = events.images[1].url;
   
   eventImg.attr("style", "width:8em;", "ml-5");
-  eventImg.attr("src", eventUrl);
-  $('#event1').attr('ml-5');
-  $(`#event${index+1}`).html(events.name + `\n` + events.info + events.dates.start.localDate).addClass("list-group-item", "ml-5");
-  //$(`#event${index+1}`).append(eventImg);
-  //$(`#eventTitle${index+1}`).html(events.info);
-  //eventTitle.html(events.name);
-  eventText.html(events.info)
+  eventImg.attr("src", eventImageUrl);
+  $(`#eventText${index+1}`).text("").append(eventImg)
+  
+  
+
+  $(`#venue${index+1}`)
+  .text("Event Date: " + events.dates.start.localDate + `\n`
+   + " " + "Event Time: " + events.dates.start.localTime)
+   .attr("style", "font-weight:bold;")
+   ;
+  //$('.list-group-item-text').text(eventItem)
+
+
+let bookingUrl = events.url
+$(`#btn-link${index+1}`).attr("href", bookingUrl)
+
 
 })
-/*mostRecentEvents.forEach((events,index) => {
-  $(`#event1Text${index+1}`).html(events.info);
-})*/
 
 
 
