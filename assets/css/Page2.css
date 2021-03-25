@@ -6,9 +6,13 @@
 
 body {
     height: 100%;
+<<<<<<< HEAD
     background-image: url(../../img/steel.JPG);
     background-size: cover;
     background-attachment: fixed;
+=======
+    background-image:url();
+>>>>>>> 4c5e5cca6f7611280617c89ee8f4d83e02ccb07b
 }
 
 header.masthead {
@@ -20,14 +24,7 @@ header.masthead {
     padding-bottom: 8rem;
 }
 
-.navbar {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: .5rem 1rem;
-}
+
 
 .container {
     width: 100%;
@@ -103,8 +100,24 @@ header.masthead {
     flex-direction: column;
 }
 
-.userInput{
-    50%
+
+
+.searchBtn{
+
+  
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
 }
 
 
+.citySearch {
+    display: contents;
+}
+
+
+button {
+
+    width: 172px;
+}
