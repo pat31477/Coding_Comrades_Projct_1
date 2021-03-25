@@ -1,12 +1,15 @@
+// add zipcode and food menu as a passing argument.
+// append the date to the html.
+
 let LetsGoButton = document.getElementById('letsGoBtn');
-let restaurantId = document.getElementById('restaurant-id');
 let restaurantText = document.getElementById('restaurant-text');
 let restaurantTitle = document.getElementById('restaurant-title');
-let eventSearchFormEl = document.getElementById('event-search-form');
+let formGroup = document.querySelectorAll('.form-control');
 let userInput = document.getElementById('user-search');
-// let userInputValue = userInput.value()
 
-let formSubmitHandler = function (event) {
+console.log(formGroup);
+
+let restaurantFormSubmitHandler = function (event) {
 
     event.preventDefault();
 
@@ -17,8 +20,8 @@ let formSubmitHandler = function (event) {
     if (zipcode) {
         getDocUApi(zipcode);
 
-        // cityName.textContent = '';
-        // cityInput.value = '';
+        restaurantTitle.textContent = '';
+        formGroup.value = '';
 
     };
 };
@@ -34,7 +37,7 @@ let getDocUApi = function (zipcode) {
                 console.log(response)
                 response.json().then(function (data) {
                     console.log(data)
-                    // input function here
+                    displayData(data, userSearchEl)
                 })
             } else {
                 alert('Error: ' + response.statusText)
@@ -45,5 +48,17 @@ let getDocUApi = function (zipcode) {
         });
 };
 
-getDocUApi('07024')
 
+let displayData = function (data, userSearchEl) {
+
+    // for (let i = 0; i < data.length; i++) {
+    //     const element = data[i].restaurant_name;
+    //     console.log(element);
+    // }
+
+    let storedEvent = data.restaurant_name
+    console.log(storedEvent)
+};
+
+
+formGroup.addEventListener('submit', restaurantFormSubmitHandler);
