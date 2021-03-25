@@ -8,19 +8,21 @@
   }
  
 
-  #enterBtn {
+  .enterBtn {
     font-family: 'cursive';
     font-size: 25px;
     font-style: oblique;
     color: rgb(149, 247, 149);
-    padding: 2px 3px 2px;
+    
     border: 0.2rem solid rgb(121, 248, 231, 0.918);
     border-radius: 1rem;
     text-transform: uppercase;
     animation: flicker 2.5s infinite alternate; 
     cursor: pointer; /* Pointer/hand icon */
-    width: 11.5%; 
-    position: fixed; top:63%; left:67.5%;
+    width: 17.5%; 
+float: right;
+margin-top: -60px;
+
   }
     #enterBtn::-moz-selection {
     background-color: var(--neon-border-color);
@@ -95,7 +97,7 @@ font-size: 10px;
 
 body {
 
-display: flex;
+
 justify-content: center;
 align-items: center;  
 min-height: 100vh;
