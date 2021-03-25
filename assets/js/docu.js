@@ -1,8 +1,3 @@
-// add zipcode and food menu as a passing argument.
-// append the date to the html.
-// check other indexes, create a for loop.
-
-
 let LetsGoButton = document.getElementById('letsGoBtn');
 let restaurantText = document.getElementById('restaurant-text');
 let restaurantTitle = document.getElementById('restaurant-title1');
@@ -80,3 +75,8 @@ let displayData = function (data) {
 
 
 formGroup.addEventListener('submit', restaurantFormSubmitHandler);
+
+
+// add zipcode and food menu as a passing argument.
+// append the date to the html.
+// check other indexes, create a for loop.
