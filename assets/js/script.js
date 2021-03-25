@@ -4,11 +4,11 @@ let nextHtmlPage = 'Page2.html';
 
 
 
-// $(document).ready(function () {
-//   $("#enterBtn").click(function () {
-//     $("#myModal").modal();
-//   });
-// });
+ $(document).ready(function () {
+ $("#enterBtn").click(function () {
+  $("#myModal").modal();
+  });
+ });
 
 // const formSubmitHandler = (events) => {
 //   if (events) getDocApi(events);

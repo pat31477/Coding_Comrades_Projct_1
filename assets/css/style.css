@@ -1,9 +1,12 @@
   .modal-header, h4, .close {
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(110, 23, 128);
     color:white !important;
     text-align: center;
     font-size: 30px;
     border-radius: 15px 15px 0 0;
+    font-family:'Courier New', Courier, monospace;
+    
+    font-style: oblique;
     
   }
  
@@ -101,7 +104,7 @@ display: flex;
 justify-content: center;
 align-items: center;  
 min-height: 100vh;
-background-image:url(../../img/concrete_texture_dark.jpg!d);
+background-image: url(../../img/concrete_texture_dark.jpg!d);
 background-size: cover;
 background-attachment: fixed;
 }
