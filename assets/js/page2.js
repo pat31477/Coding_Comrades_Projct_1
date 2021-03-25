@@ -8,7 +8,8 @@ let eventSearchForm = $("#event-search-form");
 let userInputEl = $('input[name="search-input"]');
 let userSearchEl = userInputEl.val();
 let previousSearchEl = $('#previous-search-el');
-
+let nextHtmlPage = 'Page2.html';
+  let enterBtn = $("#enterBtn")
 
 
 
@@ -16,6 +17,16 @@ $(document).ready(function(){
   $("#myBtn").click(function(){
     $("#myModal").modal();
   });
+
+ 
+     $("#enterBtn").click(function () {
+       $("#myModal").modal();
+     });
+  
+
+
+
+
 
 const savedSearches = (userSearchEl) => {
   let button1 = $('<button>');
@@ -74,12 +85,15 @@ localStorage.setItem("events", stringifiedEvents);
 
 
 
-const getEvents = (userSearchEl) => {
+const getEvents = (zipcode, userSearchEl) => {
   let apiKey = "sHs8K7xQHlo3RLonwkGtJsj8wixf5F5J";
-  let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date,asc&locale'en-us,*'&keyword=${userSearchEl}&stateCode""&countryCode=US&startDateTime"03/2021"&endDateTime"05/21/2021"&apikey=${apiKey}`;
+  //let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date,asc&locale'en-us,*'&keyword=${userSearchEl}&stateCode""&countryCode=US&startDateTime"03/2021"&endDateTime"05/21/2021"&apikey=${apiKey}`;
+  let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date,asc&locale'en-us,*'&keyword=${userSearchEl}&postalCode=${zipcode}&countryCode=US&startDateTime"03/2021"&endDateTime"05/21/2021"&apikey=${apiKey}`;
+  
   //let apiUrl = `https://app.ticketmaster.com/v2/events.json?&sort=date,name,asc&apikey=${apiKey}`;
-  //let apiUrl = `https://app.ticketmaster.com/discovery/v2/events?&sort=date,asc&locale'en-us,*'&postalCode""&keyword=${userSearchEl}&stateCode""&countryCode=US&startDateTime"03/2021"&endDateTime"05/21/2021"&apikey=${apiKey}`;
-//console.log(input);  
+  //let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date,asc&locale'en-us,*'&postalCode="08904"&countryCode=US&startDateTime="03/2021"&endDateTime="05/21/2021"&apikey=${apiKey}`;
+  //let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date&postalCode=08904&apikey=${apiKey}&keyword=basketball`;
+  //console.log(input);  
 
 fetch(apiUrl)
 .then(response => response.json())
@@ -93,6 +107,7 @@ fetch(apiUrl)
 }
 
 
+
 //displaying data from the fetch request of Ticketmaster's api
 const displayEvents = (data, userSearchEl) => {
   $("#submit-btn").disabled = false;
@@ -102,6 +117,8 @@ const displayEvents = (data, userSearchEl) => {
 
 
 let newEvents = data.events;
+//let eventList = [...new Set(newEvents)];
+//console.log(eventList.sort())
 //let newEvents = events.filter(event => event.info)
 console.log(newEvents);
 
@@ -150,12 +167,14 @@ $(`#btn-link${index+1}`).attr("href", bookingUrl)
 let clearHistoryButton = $('<button>');
 //clearHistoryButton.addClass("fancy");
 //clearHistoryButton.attr("class", "p-5", "color: green; v");
-
-//clearHistoryButton.css("style", "font-weight: 25px", "background-color: green;")
 clearHistoryButton.text("Clear History");
+clearHistoryButton.attr('class', 'btn btn-block')
+clearHistoryButton.css({ 'background-color': '#d9e9e8', color: '#1a1a1a', padding: "5px", width: "100%", display: 'block', fontSize: '10px'})
+
 previousSearchEl.append(clearHistoryButton);
 
 const removeItem = (event) => {
+  //$('.panel').hide();
   localStorage.clear();
   $(event.target).siblings().remove();
   location.reload();
@@ -176,7 +195,7 @@ clearHistoryButton.on("click", removeItem);
    window.location.href = "Page2.html";
  
 })
-letsGoBtn.on("click", formSubmitHandler);
+//letsGoBtn.on("click", formSubmitHandler);
 
 eventSearchForm.on("submit", formSubmitHandler);
 
