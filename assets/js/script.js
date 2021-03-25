@@ -1,15 +1,15 @@
 //FIX: remove Jquery
  //let letsGoBtn = $("#letsGoBtn");
-let nextHtmlPage = 'Page2.html';
-let enterBtn = $("#enterBtn")
+// let nextHtmlPage = 'Page2.html';
+// let enterBtn = $("#enterBtn")
 
 
 
- $(document).ready(function () {
-   $("#enterBtn").click(function () {
-     $("#myModal").modal();
-   });
- });
+//  $(document).ready(function () {
+//    $("#enterBtn").click(function () {
+//      $("#myModal").modal();
+//    });
+//  });
 
 // const formSubmitHandler = (events) => {
 //   if (events) getDocApi(events);
@@ -40,7 +40,7 @@ let enterBtn = $("#enterBtn")
 //   .then((result) => console.log(result))
 //   .catch((error) => console.log("error", error));
 
-const getDocApi = () => {
+/*const getDocApi = () => {
   let apiUrl = `https://api.documenu.com/v2/restaurant/4072702673999819?key=a414d27ec8621fd597b54e3526b1c8a1&zip_code&restaurant_website`;
 
   fetch(apiUrl)
@@ -159,4 +159,4 @@ displayResultsBtn.addEventListener("click", formSubmitHandler);
 
 // eventSearchForm.on("submit", formSubmitHandler);
 
-// formSubmitHandler()
+// formSubmitHandler()*/
