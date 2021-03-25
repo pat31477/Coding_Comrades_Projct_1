@@ -60,4 +60,5 @@ let displayData = function (data, userSearchEl) {
     console.log(storedEvent)
 };
 
+
 formGroup.addEventListener('submit', restaurantFormSubmitHandler);
