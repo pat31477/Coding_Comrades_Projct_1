@@ -1,9 +1,12 @@
   .modal-header, h4, .close {
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(110, 23, 128);
     color:white !important;
     text-align: center;
     font-size: 30px;
     border-radius: 15px 15px 0 0;
+    font-family:'Courier New', Courier, monospace;
+    
+    font-style: oblique;
     
   }
  
@@ -101,22 +104,23 @@ body {
 justify-content: center;
 align-items: center;  
 min-height: 100vh;
-background-image:url(../../img/concrete_texture_dark.jpg!d);
+background-image: url(../../img/concrete_texture_dark.jpg!d);
 background-size: cover;
 background-attachment: fixed;
 }
 
 h3 {
-color: rgba(38, 245, 217, 0.918);
+color: rgba(121, 248, 231, 0.918);
 padding: .5px 78px 1px;
 font-size: 31px;
--webkit-text-stroke: 1px rgb(98, 120, 243);
+-webkit-text-stroke: 1px rgb(73, 25, 187);
 }
 
 h1 {
 font-family:'Courier New', Courier, monospace;
-font-size: 65px;
+font-size: 60px;
 font-style: oblique;
+font-weight:bold;
 color: rgba(121, 248, 231, 0.918);
 padding: 4rem 9.5rem 4rem;
 border: 0.4rem solid rgb(121, 248, 231, 0.918);

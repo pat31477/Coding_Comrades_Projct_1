@@ -6,15 +6,17 @@
 
 body {
     height: 100%;
-    background-image:url();
+    background-image: url(../../img/steel.JPG);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 header.masthead {
     position: relative;
     background-color: #343a40;
-    background: url("../../img/hristo-sahatchiev-x7p8Izu3rPM-unsplash\ \(1\).jpg") no-repeat center center;
+    background: url("../../img/pexels-chan-walrus-941864.jpg") no-repeat center center;
     background-size: cover;
-    
+
     padding-bottom: 8rem;
 }
 
@@ -70,7 +72,8 @@ header.masthead {
     height: 150px;
     clear: both;
     padding-top: 20px;
-    color: #fff;
+    
+    background: url("../../img/pexels-chan-walrus-941864.jpg") no-repeat center center;
 }
 
 .previousSearch {
