@@ -47,6 +47,7 @@ const formSubmitHandler = (event) => {
 event.preventDefault();
 
 let userSearchEl = userInputEl.val().trim();
+//let postalCode = userInputEl.val().trim()
 
 /*let checkedEl = $('input:radio');
 $('input[type="text"]').val(' ');
@@ -55,6 +56,7 @@ $('input[type="radio"]').prop('radio', false);*/
 
   if (userSearchEl) {
   getEvents(userSearchEl);
+  userInputEl.val("");
   //getDocApi(userSearchEl);
 } else {
   $('#submit-btn').disabled = true;
@@ -76,15 +78,15 @@ const getEvents = (userSearchEl) => {
   let apiKey = "sHs8K7xQHlo3RLonwkGtJsj8wixf5F5J";
   let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date,asc&locale'en-us,*'&keyword=${userSearchEl}&stateCode""&countryCode=US&startDateTime"03/2021"&endDateTime"05/21/2021"&apikey=${apiKey}`;
   //let apiUrl = `https://app.ticketmaster.com/v2/events.json?&sort=date,name,asc&apikey=${apiKey}`;
+  //let apiUrl = `https://app.ticketmaster.com/discovery/v2/events?&sort=date,asc&locale'en-us,*'&postalCode""&keyword=${userSearchEl}&stateCode""&countryCode=US&startDateTime"03/2021"&endDateTime"05/21/2021"&apikey=${apiKey}`;
 //console.log(input);  
 
 fetch(apiUrl)
 .then(response => response.json())
-
 .then(data => {
   console.log(data);
   console.log(data._embedded);
-  displayEvents(data._embedded, userSearchEl);
+ displayEvents(data._embedded, userSearchEl);
 
 })
 
@@ -97,8 +99,9 @@ const displayEvents = (data, userSearchEl) => {
   //console.log(userSearchEl);
   //console.log(data.events);
 //variable set to the events object inside the data
-let newEvents = data.events;
 
+
+let newEvents = data.events;
 //let newEvents = events.filter(event => event.info)
 console.log(newEvents);
 
@@ -118,7 +121,7 @@ newEvents.forEach((events, index) => {
   
   eventImg.attr("style", "width:8em;", "ml-5");
   eventImg.attr("src", eventImageUrl);
-  $(`#eventText${index+1}`).text("").append(eventImg)
+  $(`#eventText${index+1}`).append(eventImg)
   
   
 
@@ -145,6 +148,10 @@ $(`#btn-link${index+1}`).attr("href", bookingUrl)
 
 
 let clearHistoryButton = $('<button>');
+//clearHistoryButton.addClass("fancy");
+//clearHistoryButton.attr("class", "p-5", "color: green; v");
+
+//clearHistoryButton.css("style", "font-weight: 25px", "background-color: green;")
 clearHistoryButton.text("Clear History");
 previousSearchEl.append(clearHistoryButton);
 
@@ -163,14 +170,13 @@ clearHistoryButton.on("click", removeItem);
 
 //added letsGoBtn "id" to html and my a variable for this. added an event listener that will redirect to
 //page2 html
-letsGoBtn.on("click", function (event) {
+ letsGoBtn.on("click", function (event) {
   event.preventDefault();
   
-  window.location.href = "Page2.html";
+   window.location.href = "Page2.html";
  
 })
-//working on event listener on first page html
-//letsGoBtn.on("click", formSubmitHandler);
+letsGoBtn.on("click", formSubmitHandler);
 
 eventSearchForm.on("submit", formSubmitHandler);
 
