@@ -111,13 +111,14 @@ h3 {
 color: rgba(38, 245, 217, 0.918);
 padding: .5px 78px 1px;
 font-size: 31px;
--webkit-text-stroke: 1px rgb(98, 120, 243);
+-webkit-text-stroke: .7px rgb(236, 16, 218);
 }
 
 h1 {
 font-family:'Courier New', Courier, monospace;
-font-size: 65px;
+font-size: 60px;
 font-style: oblique;
+font-weight:bold;
 color: rgba(121, 248, 231, 0.918);
 padding: 4rem 9.5rem 4rem;
 border: 0.4rem solid rgb(121, 248, 231, 0.918);
