@@ -7,6 +7,7 @@ let eventTitle = $("#event-title");
 let eventSearchForm = $(".userInput");
 console.log(eventSearchForm)
 let userInputEl = $('input[name="search-input"]');
+console.log(userInputEl)
 //let userSearchEl = userInputEl.val();
 let postalcodeInputEl = $('input[name="postal-input"]');
 let previousSearchEl = $('#previous-search-el');
@@ -57,6 +58,8 @@ for (var i = 0; i < storedEvent.length; i++) {
 
 
 const formSubmitHandler = (event) => {
+  
+  console.log(event.target)
 event.preventDefault();
 event.stopPropagation();
 
@@ -68,8 +71,8 @@ let postalcode = postalcodeInputEl.val().trim();
   if (userSearchEl || postalcode) {
   
   getEvents(userSearchEl, postalcode);
-  userInputEl.val("");
-  postalcodeInputEl.val("")
+  // userInputEl.val("");
+  // postalcodeInputEl.val("")
   
   //getDocApi(userSearchEl);
 } else {
@@ -185,36 +188,12 @@ if (uniqueEvents.find(element => element == true)) {
 }
 
 
-
-
-  
-  
-
-
-
-
-
-  
   eventBody.append(eventDiv)
   //eventBody.append(h4);
 
   //let eventTime = $('<p>');
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //  newEvents.forEach((events, index) => {
@@ -288,7 +267,8 @@ clearHistoryButton.on("click", removeItem);
 })
 //letsGoBtn.on("click", formSubmitHandler);
 
-eventSearchForm.on("submit", formSubmitHandler);
+ //eventSearchForm.on("submit", formSubmitHandler);
+$('#submit-btn').on("click", formSubmitHandler)
 
 
 });
