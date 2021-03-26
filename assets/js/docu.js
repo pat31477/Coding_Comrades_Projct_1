@@ -101,6 +101,8 @@ submitBtn.addEventListener('click', restaurantFormSubmitHandler);
 
 // merge zipcode search box.
 
+// link module 
+
 // fix local storage buttons. ?
 
 // make a function where it alerts the user if results show up
