@@ -9,16 +9,19 @@ let restaurantAddress3 = document.getElementById('restaurant-address3');
 let restaurantPhone1 = document.getElementById('restaurant-phone1');
 let restaurantPhone2 = document.getElementById('restaurant-phone2');
 let restaurantPhone3 = document.getElementById('restaurant-phone3');
+let foodContainer = document.querySelector('#food-container')
 let foodChoice = document.querySelector('#foodChoice')
 let formGroup = document.querySelector('.userInput');
 let userInput = document.querySelector('#zipCodeInput');
 
+console.log(foodContainer)
 
 let restaurantFormSubmitHandler = function (event) {
 
     event.preventDefault();
 
     console.log(event.target)
+
     let foodChoiceValue = foodChoice.value
 
     let zipCode = userInput.value
@@ -32,17 +35,18 @@ let restaurantFormSubmitHandler = function (event) {
 let getDocUApi = function (zipCode, foodChoiceValue) {
 
     // positioning of the parameter in my url is messing this up?
-    let docUApi = `https://api.documenu.com/v2/restaurants/zip_code/${zipCode}?size=20&key=a414d27ec8621fd597b54e3526b1c8a1`;
-    // let docUApi2 = `https://api.documenu.com/v2/restaurant/4072702673999819?key=a76c50a39fbd01d6e7e04e48e6c00d79`
+    let docUApi = `https://api.documenu.com/v2/restaurants/zip_code/${zipCode}?size=20&key=6562bde25b3eb83b49f40ca6f49a4db0`;
 
     fetch(docUApi)
         .then(function (response) {
             if (response.ok) {
                 console.log(response)
                 response.json().then(function (data) {
-                    console.log(data.data)
-                    let cuisinesData = data.data.filter( function(restaurant) {
-                        return restaurant.cuisines[0] === foodChoiceValue
+                    console.log(data)
+                    let cuisinesData = data.data.filter(function (restaurant) {
+                        for (let i = 0; i < restaurant.cuisines.length; i++) {
+                            return restaurant.cuisines[i] === foodChoiceValue
+                        }
                     })
                     console.log(cuisinesData)
                     displayData(cuisinesData, zipCode)
@@ -57,26 +61,51 @@ let getDocUApi = function (zipCode, foodChoiceValue) {
 };
 
 
-let displayData = function (data) {
+let displayData = function (cuisinesData) {
 
-    restaurantTitle.textContent = data[0].restaurant_name
-    restaurantTitle2.textContent = data[1].restaurant_name
-    restaurantTitle3.textContent = data[2].restaurant_name
+    let uniqueRestaurants = Array.from(new Set(cuisinesData.map(a => a.restaurant_name)))
+        .map(restaurant_name => {
+            return cuisinesData.find(a => a.restaurant_name === restaurant_name)
+        })
 
-    restaurantAddress1.textContent = data[0].address.formatted
-    restaurantPhone1.textContent = data[0].restaurant_phone
+    for (let i = 0; i < uniqueRestaurants.length && i < 3; i++) {
+        let h4 = document.createElement('h4');
+        let p = document.createElement('p');
+        let p2 = document.createElement('p');
+        let h5 = document.createElement('h5');
+        let directRestaurant = uniqueRestaurants[i].restaurant_website;
+        let restaurantDiv = document.createElement('a')
+        restaurantDiv.className += 'list-group-item'
+        restaurantDiv.style.margin = '3rem';
+        h4.textContent = uniqueRestaurants[i].restaurant_name
+        p.textContent = uniqueRestaurants[i].address.formatted
+        p2.textContent = uniqueRestaurants[i].restaurant_phone
+        restaurantDiv.setAttribute("href", directRestaurant)
+        restaurantDiv.setAttribute('target', '_blank')
+        restaurantDiv.appendChild(h4)
+        restaurantDiv.appendChild(p)
+        restaurantDiv.appendChild(p2)
+        foodContainer.appendChild(restaurantDiv)
 
-    restaurantAddress2.textContent = data[1].address.formatted
-    restaurantPhone2.textContent = data[1].restaurant_phone
-
-    restaurantAddress3.textContent = data[2].address.formatted
-    restaurantPhone3.textContent = data[2].restaurant_phone
+        if (directRestaurant === "") {
+            h5.textContent = "NO WEBSITE!"
+            h5.setAttribute("style", "color: red;");  
+            restaurantDiv.appendChild(h5)
+            foodContainer.appendChild(restaurantDiv)
+        }
+    }
 };
 
 
 formGroup.addEventListener('submit', restaurantFormSubmitHandler);
 
 
-// add zipcode and food menu as a passing argument.
-// append the date to the html.
-// check other indexes, create a for loop.
+// merge zipcode search box.
+
+// fix local storage buttons. ?
+
+// make a function where it alerts the user if results show up
+
+// make conditional.
+
+// everytime the user searches a new zipcode, refresh the page.
