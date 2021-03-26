@@ -13,8 +13,7 @@ let foodContainer = document.querySelector('#food-container')
 let foodChoice = document.querySelector('#foodChoice')
 let formGroup = document.querySelector('.userInput');
 let userInput = document.querySelector('#zipCodeInput');
-
-console.log(foodContainer)
+let submitBtn = document.querySelector('#submit-btn')
 
 let restaurantFormSubmitHandler = function (event) {
 
@@ -97,7 +96,7 @@ let displayData = function (cuisinesData) {
 };
 
 
-formGroup.addEventListener('submit', restaurantFormSubmitHandler);
+submitBtn.addEventListener('click', restaurantFormSubmitHandler);
 
 
 // merge zipcode search box.
