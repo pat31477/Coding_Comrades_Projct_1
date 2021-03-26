@@ -144,6 +144,7 @@ console.log(zipCode)
     if (userSearchEl || postalcode) {
       $('#events').empty();
     }
+    //if ()
 
 
     for (var i = 0; i < uniqueEvents.length && i < 3; i++) {
@@ -164,23 +165,42 @@ console.log(zipCode)
         margin: "3rem"
       });
       h4.text(uniqueEvents[i].name);
-
-
-  
-
       eventDiv.append(h4);
       eventDiv.append(eventP);
      
 
-      if (uniqueEvents.find(element => element == true)) {
+      // if (uniqueEvents.find(element => element.dates.start.localTime)) {
+      //   console.log(element);
+      //   //eventP2.text(element.localTime)
+      //   //eventDiv.append(eventP2);
 
-        eventP2.text(element.localTime)
-        eventDiv.append(eventP2);
+      // } else {
+      //   //eventP2.text("There is no local time for this event");
+      //   //eventDiv.append(eventP2)
+        
+      // }
+      // let arr = [];
 
-      } else {
-        eventP2.text("There is no local time for this event");
-        eventDiv.append(eventP2)
-      }
+
+      // uniqueEvents.filter(element => {
+      //   element.dates.start.localTime;
+
+
+      //   arr.push(element.dates.start.localTime)
+      
+
+
+
+
+      //   console.log(arr.shift())
+      // })
+
+
+
+
+
+
+
 
 
       eventBody.append(eventDiv)

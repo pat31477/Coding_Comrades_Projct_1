@@ -26,7 +26,7 @@ let restaurantFormSubmitHandler = function (event) {
 
       foodChoiceValue = foodChoice.value
 
-     zipCode = userInput.value
+    zipCode = userInput.value
 
     if (zipCode) {
         getDocUApi(zipCode, foodChoiceValue);
@@ -69,6 +69,13 @@ let displayData = function (cuisinesData) {
         .map(restaurant_name => {
             return cuisinesData.find(a => a.restaurant_name === restaurant_name)
         })
+
+        foodChoiceValue = foodChoice.value
+        zipCode = userInput.value
+
+        if(foodChoiceValue || zipCode) {
+            $('#food-container').empty();
+        }
 
     for (let i = 0; i < uniqueRestaurants.length && i < 3; i++) {
         let h4 = document.createElement('h4');
