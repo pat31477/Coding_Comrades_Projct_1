@@ -7,7 +7,7 @@ let eventTitle = $("#event-title");
 let eventSearchForm = $(".userInput");
 console.log(eventSearchForm)
 let userInputEl = $('input[name="search-input"]');
-let userSearchEl = userInputEl.val();
+//let userSearchEl = userInputEl.val();
 let postalcodeInputEl = $('input[name="postal-input"]');
 let previousSearchEl = $('#previous-search-el');
 let nextHtmlPage = 'Page2.html';
@@ -58,6 +58,7 @@ for (var i = 0; i < storedEvent.length; i++) {
 
 const formSubmitHandler = (event) => {
 event.preventDefault();
+event.stopPropagation();
 
 let userSearchEl = userInputEl.val().trim();
 let postalcode = postalcodeInputEl.val().trim();
@@ -65,20 +66,21 @@ let postalcode = postalcodeInputEl.val().trim();
 
 
   if (userSearchEl || postalcode) {
-    userInputEl.val("");
-  postalcodeInputEl.val("")
+  
   getEvents(userSearchEl, postalcode);
+  userInputEl.val("");
+  postalcodeInputEl.val("")
   
   //getDocApi(userSearchEl);
 } else {
   $('#submit-btn').disabled = true;
 
 }
-savedSearches(userSearchEl);
+savedSearches(userSearchEl, postalcode);
 let storedEvent = localStorage.getItem("events");
 storedEvent = JSON.parse(storedEvent) || [];
 
-storedEvent.push(userSearchEl);
+storedEvent.push(userSearchEl, postalcode);
 let stringifiedEvents = JSON.stringify(storedEvent);
 localStorage.setItem("events", stringifiedEvents);
 
@@ -87,10 +89,12 @@ localStorage.setItem("events", stringifiedEvents);
 
 
 const getEvents = (userSearchEl, postalcode) => {
+  //console.log(userSearchEl)
   let apiKey = "sHs8K7xQHlo3RLonwkGtJsj8wixf5F5J";
   //let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date,asc&locale'en-us,*'&keyword=${userSearchEl}&stateCode""&countryCode=US&startDateTime"03/2021"&endDateTime"05/21/2021"&apikey=${apiKey}`;
   let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date,asc&locale'en-us,*'&keyword=${userSearchEl}&postalCode=${postalcode}&countryCode=US&startDateTime"03/2021"&endDateTime"05/21/2021"&apikey=${apiKey}`;
   console.log(apiUrl);
+  //console.log(userSearchEl)
   //let apiUrl = `https://app.ticketmaster.com/v2/events.json?&sort=date,name,asc&apikey=${apiKey}`;
   //let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date,asc&locale'en-us,*'&postalCode="08904"&countryCode=US&startDateTime="03/2021"&endDateTime="05/21/2021"&apikey=${apiKey}`;
   //let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date&postalCode=08904&apikey=${apiKey}&keyword=basketball`;
@@ -100,9 +104,9 @@ fetch(apiUrl)
 .then(response => response.json())
 .then(data => {
   console.log(data);
-  console.log(postalcode);
+  //console.log(postalcode);
   console.log(data._embedded);
- displayEvents(data._embedded, userSearchEl);
+ displayEvents(data._embedded, userSearchEl, postalcode);
 
 })
 
@@ -113,50 +117,139 @@ fetch(apiUrl)
 //displaying data from the fetch request of Ticketmaster's api
 const displayEvents = (data, userSearchEl, postalcode) => {
   $("#submit-btn").disabled = false;
-  //console.log(userSearchEl);
-  //console.log(data.events);
-//variable set to the events object inside the data
 
+// let eventItems = $('#events .list-group-item');
 
+// eventItem = eventItems.first();
+// console.log(eventItem);
 let newEvents = data.events;
-//let eventList = [...new Set(newEvents)];
-//console.log(eventList.sort())
-//let newEvents = events.filter(event => event.info)
-console.log(newEvents);
+console.log(newEvents)
+console.log(newEvents.name);
 
-let eventItems = $('#events .list-group-item');
+let uniqueEvents = Array.from(new Set(newEvents.map(a => a.name)))
+.map(name => {
+  return newEvents.find(a => a.name === name)
+})
+console.log(uniqueEvents)
 
-eventItem = eventItems.first();
-console.log(eventItem);
+// let newEventNames = newEvents[0].name;
+// console.log(newEventNames)
+// const removeDupes = (newEvents) => {
+//   let unique = {};
+//   newEvents.forEach(function(i) {
+//     if(!unique[i]) {
+//       unique[i] = true;
+//       console.log(unique[i]);
+//     }
+//   })
+//    console.log(Object.keys(unique));
+// }
 
 
-newEvents.forEach((events, index) => {
+
+
+for (var i = 0; i < uniqueEvents.length && i < 3; i++) {
+//removeDupes(newEvents)
+  let eventBody = $('#events');
+  let h4 = $('<h4>');
+  let eventDiv = $('<a>');
+  let eventP = $('<p>');
+  let eventP2 = $('<p>');
+  //let eventTag = $('<a>');
+  let directEvent = uniqueEvents[i].url;
+  console.log(directEvent);
+  // eventTag.attr("href", directEvent);
+  // eventTag.text("click")
+  // eventDiv.append(eventTag)
+  //eventBody.append(eventDiv);
+  //console.log(uniqueEvents[i].dates.start.localDate)
+
+  eventP.text(uniqueEvents[i].dates.start.localDate);
+  
+  // eventP2.text(uniqueEvents[i].data.start.localTime);
+  eventDiv.addClass('list-group-item').css({margin: "3rem"});
+  h4.text(uniqueEvents[i].name);
+  eventDiv.attr("href", directEvent);
+  //eventDiv.text("click")
+  //eventDiv.append(eventTag)
+ 
+  eventDiv.append(h4);
+  eventDiv.append(eventP);
+  let element = uniqueEvents[i].dates.start.localTime;
+  console.log(element)
+
+if (uniqueEvents.find(element => element == true)) { 
+  
+  eventP2.text(element.localTime)
+  eventDiv.append(eventP2);
+
+}  else {
+  eventP2.text("There is no local time for this event");
+  eventDiv.append(eventP2)
+}
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  eventBody.append(eventDiv)
+  //eventBody.append(h4);
+
+  //let eventTime = $('<p>');
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  newEvents.forEach((events, index) => {
   
     
-  $(`#list-text${index+1}`).text(events.name)
+//   $(`#list-text${index+1}`).text(events.name)
   
-  let eventImg = $('<img>');
-  let eventImageUrl = events.images[1].url;
+//   let eventImg = $('<img>');
+//   let eventImageUrl = events.images[1].url;
   
-  eventImg.attr("style", "width:8em;", "ml-5");
-  eventImg.attr("src", eventImageUrl);
-  $(`#eventText${index+1}`).append(eventImg)
+//   eventImg.attr("style", "width:8em;", "ml-5");
+//   eventImg.attr("src", eventImageUrl);
+//   $(`#eventText${index+1}`).append(eventImg)
   
   
 
-  $(`#venue${index+1}`)
-  .text("Event Date: " + events.dates.start.localDate + `\n`
-   + " " + "Event Time: " + events.dates.start.localTime)
-   .attr("style", "font-weight:bold;")
-   ;
-  //$('.list-group-item-text').text(eventItem)
+//   $(`#venue${index+1}`)
+//    .text("Event Date: " + events.dates.start.localDate + `\n`
+//     + " " + "Event Time: " + events.dates.start.localTime)
+//    .attr("style", "font-weight:bold;")
+//     ;
+// //   //$('.list-group-item-text').text(eventItem)
 
 
-let bookingUrl = events.url
-$(`#btn-link${index+1}`).attr("href", bookingUrl)
+// // let bookingUrl = events.url
+// // $(`#btn-link${index+1}`).attr("href", bookingUrl)
+//  })
 
 
-})
+
+
 
 
 
