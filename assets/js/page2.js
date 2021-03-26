@@ -38,16 +38,20 @@ console.log(zipCode)
   const savedSearches = (userSearchEl) => {
     console.log(userSearchEl)
     let button1 = $('<button>');
-
-    button1.text(userSearchEl);
+    button1.attr('class', 'btn btn-block')
+    button1.css({'background-color': '#d9e9e8',
+    color: '#1a1a1a',
+    padding: "5px",
+    width: "100%",
+    display: 'block',
+    fontSize: '20px'});
+    button1.text(userSearchEl[0].toUpperCase() + userSearchEl.substring(1).toLowerCase());
     previousSearchEl.append(button1);
 
     button1.on('click', function (event) {
       event.preventDefault();
       let eventButton = $(this).val();
-      console.log(eventButton);
-      console.log($(this));
-
+     
       getEvents(userSearchEl, "");
       //displayEvents(eventButton)
 
@@ -79,6 +83,7 @@ console.log(zipCode)
 
 
     if (userSearchEl || postalcode) {
+     
 
       getEvents(userSearchEl, postalcode);
       userInputEl.val("");
@@ -107,7 +112,7 @@ console.log(zipCode)
     
     let apiKey = "sHs8K7xQHlo3RLonwkGtJsj8wixf5F5J";
     let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date,asc&locale'en-us,*'&keyword=${userSearchEl}&postalCode=${postalcode}&countryCode=US&startDateTime"03/2021"&endDateTime"05/21/2021"&apikey=${apiKey}`;
-    console.log(apiUrl);
+    
    
 
     fetch(apiUrl)
@@ -115,7 +120,6 @@ console.log(zipCode)
       .then(data => {
         console.log(data);
         
-        console.log(data._embedded);
         let events = data._embedded
         displayEvents(events, userSearchEl, postalcode);
 
@@ -128,23 +132,19 @@ console.log(zipCode)
   //displaying data from the fetch request of Ticketmaster's api
   const displayEvents = (events, userSearchEl, postalcode) => {
     $("#submit-btn").disabled = false;
-    console.log(postalcode)
+    
     
     let newEvents = events.events;
-    console.log(newEvents)
-    //console.log(newEvents.name);
-
+    
     let uniqueEvents = Array.from(new Set(newEvents.map(a => a.name)))
       .map(name => {
         return newEvents.find(a => a.name === name)
       })
-    console.log(uniqueEvents)
-
-  
+   
     if (userSearchEl || postalcode) {
       $('#events').empty();
     }
-    //if ()
+    
 
 
     for (var i = 0; i < uniqueEvents.length && i < 3; i++) {
@@ -153,60 +153,40 @@ console.log(zipCode)
       let h4 = $('<h4>');
       let eventP = $('<p>');
       let eventP2 = $('<p>');
+      let eventP3 = $('<p>')
 
       let eventDiv = $('<a>');
       let directEvent = uniqueEvents[i].url;
       eventDiv.attr("href", directEvent);
-
+      eventP.attr("style", "font-weight:bold")
       eventP.text(uniqueEvents[i].dates.start.localDate);
 
 
       eventDiv.addClass('list-group-item').css({
         margin: "3rem"
       });
+      h4.attr("style", "color:#FF3333")
       h4.text(uniqueEvents[i].name);
       eventDiv.append(h4);
       eventDiv.append(eventP);
-     
 
-      // if (uniqueEvents.find(element => element.dates.start.localTime)) {
-      //   console.log(element);
-      //   //eventP2.text(element.localTime)
-      //   //eventDiv.append(eventP2);
+      console.log(uniqueEvents[i]._embedded.venues[0])
 
-      // } else {
-      //   //eventP2.text("There is no local time for this event");
-      //   //eventDiv.append(eventP2)
-        
-      // }
-      // let arr = [];
+      let foo = uniqueEvents[i]._embedded.venues[0];
+      console.log(foo)
+      let venueName = foo.name;
+      let venueAddress = foo.address.line1;
+      let venueCity = foo.city.name
+      let venueState = foo.state.name
+      eventP2.attr("style", "font-weight: bold", "font-size: 6rem;")
+      eventP2.text("Event " + venueName)
+      eventDiv.append(eventP2)
 
-
-      // uniqueEvents.filter(element => {
-      //   element.dates.start.localTime;
-
-
-      //   arr.push(element.dates.start.localTime)
-      
-
-
-
-
-      //   console.log(arr.shift())
-      // })
-
-
-
-
-
-
-
-
-
+      eventP3.attr("style", "font-weight: bold", "font-size: 4rem;");
+      eventP3.text("Address: " + venueAddress + venueCity + " " + ", " + " " + venueState)
+      eventDiv.append(eventP3)
       eventBody.append(eventDiv)
-      //eventBody.append(h4);
-
-      //let eventTime = $('<p>');
+  
 
     }
 
