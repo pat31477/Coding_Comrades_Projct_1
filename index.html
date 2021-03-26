@@ -39,8 +39,22 @@
           <!--ben changed the form name-->
           <form name="login-form">
             <div class="form-group">
-              <label for="usrname"><span><i class="icon-small icon-pizza"></i></span> Type of food:</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Type of Food">
+              <div class="form-group foodChoice1">
+                <label for="usrname"><span><i class="icon-small icon-pizza"></i></span> Type of food:</label>
+                <select class="form-control foodChoice" id="foodChoice1">
+                    <option value="Italian">Italian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Pizza">Pizza</option>
+                    <option value="Greek">Greek</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Seafood">Seafood</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Ice Cream">Ice Cream</option>
+                    <option value="Fast Food">Fast Food</option>
+                    <option value="American">American</option>
+                </select>
+            </div>
+              
             </div>
             <div class="form-group">
               <label for="psw"> <i class="icon-small icon-pizza"></i>></span> Zip Code:</label>
