@@ -152,25 +152,20 @@ for (var i = 0; i < uniqueEvents.length && i < 3; i++) {
 //removeDupes(newEvents)
   let eventBody = $('#events');
   let h4 = $('<h4>');
-  let eventDiv = $('<a>');
   let eventP = $('<p>');
   let eventP2 = $('<p>');
-  //let eventTag = $('<a>');
+  
+  let eventDiv = $('<a>');
   let directEvent = uniqueEvents[i].url;
-  console.log(directEvent);
-  // eventTag.attr("href", directEvent);
-  // eventTag.text("click")
-  // eventDiv.append(eventTag)
-  //eventBody.append(eventDiv);
-  //console.log(uniqueEvents[i].dates.start.localDate)
+  eventDiv.attr("href", directEvent);
 
   eventP.text(uniqueEvents[i].dates.start.localDate);
   
-  // eventP2.text(uniqueEvents[i].data.start.localTime);
+  
   eventDiv.addClass('list-group-item').css({margin: "3rem"});
   h4.text(uniqueEvents[i].name);
   
-  eventDiv.attr("href", directEvent);
+  
   //eventDiv.text("click")
   //eventDiv.append(eventTag)
  
