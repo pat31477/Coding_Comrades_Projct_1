@@ -169,6 +169,7 @@ for (var i = 0; i < uniqueEvents.length && i < 3; i++) {
   // eventP2.text(uniqueEvents[i].data.start.localTime);
   eventDiv.addClass('list-group-item').css({margin: "3rem"});
   h4.text(uniqueEvents[i].name);
+  
   eventDiv.attr("href", directEvent);
   //eventDiv.text("click")
   //eventDiv.append(eventTag)
