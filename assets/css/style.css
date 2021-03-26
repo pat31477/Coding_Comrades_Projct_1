@@ -70,6 +70,7 @@ margin-left: 85px;
 margin-top: 300px;
 width: max-content;
 border-radius: 20px;
+border: 5px solid rgb(44, 53, 177);
 }
 
 .btn-success {
