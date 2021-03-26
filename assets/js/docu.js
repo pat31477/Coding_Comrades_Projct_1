@@ -14,6 +14,9 @@ let foodChoice = document.querySelector('#foodChoice')
 let formGroup = document.querySelector('.userInput');
 let userInput = document.querySelector('#zipCodeInput');
 let submitBtn = document.querySelector('#submit-btn')
+let foodChoiceValue;
+let zipCode;
+// export default zipCode;
 
 let restaurantFormSubmitHandler = function (event) {
 
@@ -21,9 +24,9 @@ let restaurantFormSubmitHandler = function (event) {
 
     console.log(event.target)
 
-    let foodChoiceValue = foodChoice.value
+      foodChoiceValue = foodChoice.value
 
-    let zipCode = userInput.value
+     zipCode = userInput.value
 
     if (zipCode) {
         getDocUApi(zipCode, foodChoiceValue);
