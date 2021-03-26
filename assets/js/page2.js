@@ -12,7 +12,12 @@ console.log(userInputEl)
 let postalcodeInputEl = $('input[name="postal-input"]');
 let previousSearchEl = $('#previous-search-el');
 let nextHtmlPage = 'Page2.html';
-  let enterBtn = $("#enterBtn")
+  let enterBtn = $("#enterBtn");
+  let userSearchEl;
+  
+  // import zipCode from './docu';
+ 
+  console.log(zipCode)
 
 
 
@@ -27,7 +32,8 @@ $(document).ready(function(){
      });
   
 
-
+//figure out how to fetch from query string on page2.js
+//
 
 
 
@@ -68,8 +74,8 @@ const formSubmitHandler = (event) => {
 event.preventDefault();
 event.stopPropagation();
 
-let userSearchEl = userInputEl.val().trim();
-let postalcode = postalcodeInputEl.val().trim();
+ userSearchEl = userInputEl.val().trim();
+ postalcode = postalcodeInputEl.val().trim();
 
 
 
@@ -152,6 +158,10 @@ console.log(uniqueEvents)
 //   })
 //    console.log(Object.keys(unique));
 // }
+if (userSearchEl || postalcode) {
+  $('#events').empty();
+}
+
 
 
 
@@ -266,14 +276,39 @@ clearHistoryButton.on("click", removeItem);
 //page2 html
  letsGoBtn.on("click", function (event) {
   event.preventDefault();
+  foodChoiceValue = "Chinese";
+  // zipCode = $('#zipCodeInput').val();
   
-   window.location.href = "Page2.html";
+  console.log(zipCode)
+  jQuery('#zipCodeinput').load('Page2.html')
+ 
+  
+   window.location.href = "Page2.html?food="+foodChoiceValue + "&zip="+zipCode;
+   formSubmitHandler();
+  
  
 })
+//console.log(zipCode)
+// const loadNewContent = () => {
+//   $.ajax("Page2.html", {
+//     success: function(response) {
+//       $('#postal-input').html(response)
+//     }
+//   })
+// }
+// letsGoBtn.on('click', loadNewContent)
+
+
+
+
+
+
+
 //letsGoBtn.on("click", formSubmitHandler);
 
  //eventSearchForm.on("submit", formSubmitHandler);
 $('#submit-btn').on("click", formSubmitHandler)
+
 
 
 });
