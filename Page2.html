@@ -12,45 +12,24 @@
 </head>
 
 <body>
-
-
-
     <!-- header, fix the positioning and alignment -->
     <header class="masthead text-white text-center">
         <div class="overlay"></div>
-        <div class="container">
-            
-            </div>
-        </div>
+        <div class="container"></div>
     </header>
-
     <!-- main content -->
     <div id="wrap" class="mainContent">
         <div class="container searchContent">
             <form class="userInput">
-                
-
-                    <div class="form-row" style ="display: inline;">
-                        <div class="col-12 col-md-9 mb-2 mb-md-0 citySearch" >
-                        
-                            <label for="foodChoice">Search By City:</label>
-                        
-                            <input id="user-search" class="form-control form-control-lg" name="search-input"
-                                type="text" placeholder="Search">
-
-                                <label for="foodChoice">Zipcode:</label>
-                        
-                            <input id="user-search" class="form-control form-control-lg" name="postal-input"
-                                type="text" placeholder="Search">
-                       
-                       
-
-                               
-                            
-                               
-                        </div>
+                <div class="form-row" style="display: inline;">
+                    <div class="col-12 col-md-9 mb-2 mb-md-0 citySearch">
+                        <label for="foodChoice">Search By City:</label>
+                        <input id="user-search" class="form-control form-control-lg" name="search-input" type="text"
+                            placeholder="Search">
+                        <label for="foodChoice">Zipcode:</label>
+                        <input type="text" class="form-control" id="zipCodeInput" maxlength="5" placeholder="Zip Code">
                     </div>
-                
+                </div>
                 <div class="form-group foodChoice">
                     <label for="foodChoice">Type of Food:</label>
                     <select class="form-control foodChoice" id="foodChoice">
@@ -66,110 +45,44 @@
                         <option value="American">American</option>
                     </select>
                 </div>
-                    
             </form>
-            <button id="submit-btn" type="submit"
-                                class="btn btn-block btn-lg btn-primary searchBtn">Search</button>
+            <button id="submit-btn" type="submit" class="btn btn-block btn-lg btn-primary searchBtn">Search</button>
             <div class="previousSearch" id="previous-search-el"></div>
         </div>
-
         <div id="main" class="container">
             <div class="row">
-
-
                 <!-- Fix and add more features to display the suggestion box -->
                 <div class="container">
                     <div class="row contentContainer">
                         <div class="col-md-6">
                             <div id="event-id" class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Let's Eat!</h3>
+                                    <h3 class="panel-title"> <a href="#" class="btn btn-primary">Let's Eat!</a></h3>
                                 </div>
-                                <div class="panel-body">
-
-                                    <div id="food1" class="list-group">
-                                        <a href="#" class="list-group-item">
-                                            <h4 id="restaurant-title1" class="list-group-item-heading"></h4>
-                                            <p id="restaurant-address1" class="list-group-item-text"></p>
-                                            <p id="restaurant-phone1" class="list-group-item-text"></p>
-                                        </a>
-                                    </div>
-
-                                    <div id="food1" class="list-group">
-                                        <a href="#" class="list-group-item">
-                                            <h4 id="restaurant-title2" class="list-group-item-heading"></h4>
-                                            <p id="restaurant-address2" class="list-group-item-text"></p>
-                                            <p id="restaurant-phone2" class="list-group-item-text"></p>
-                                        </a>
-                                    </div>
-
-                                    <div id="food1" class="list-group">
-                                        <a href="#" class="list-group-item">
-                                            <h4 id="restaurant-title3" class="list-group-item-heading"></h4>
-                                            <p id="restaurant-address3" class="list-group-item-text"></p>
-                                            <p id="restaurant-phone3" class="list-group-item-text"></p>
-                                        </a>
-                                    </div>
-                                </div>
+                                <div id="food-container" class="panel-body"></div>
                             </div>
                         </div>
-
-
                         <div class="row">
                             <!--Events-->
                             <div class="col-md-6">
-
                                 <div id="event-id" class="panel">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title"> Let's Do something</h3>       
+                                        <h3 class="panel-title"> <a href="#" class="btn btn-primary">Let's Do Something!</a></h3>
                                     </div>
                                     <!-- put id on panel body-->
-                                    <div class="panel-body">
-
-                                        <div id="events" class="list-group">
-
-                                            <div id="link1" class="list-group-item">
-                                                <h4 id="list-text1" class="list-group-item-heading"></h4>
-                                                <p id="eventText1" class="list-group-item-text"></p>
-                                                <p id="venue1"></p>
-                                                <a href="" target=" " id="btn-link1"><button type="button" class="btn btn-secondary">Learn More & Book</button></a>
-                                            </div>
-                                        </div>
-
-                                        <div class="list-group">
-
-                                            <div id="link2" class="list-group-item">
-                                                <h4 id="list-text2" class="list-group-item-heading"></h4>
-                                                <p id="eventText2" class="list-group-item-text"></p>
-                                                <p id="venue2"></p>
-                                                <a href="" target=" " id="btn-link1"><button type="button" class="btn btn-secondary">Learn More & Book</button></a>
-                                            </div>
-                                        </div>
-
-                                        <div class="list-group">
-
-                                            <div id="link3" class="list-group-item">
-                                                <h4 id="list-text3" class="list-group-item-heading"></h4>
-                                                <p id="eventText3" class="list-group-item-text"></p>
-                                                <p id="venue3"></p>
-                                                <a href="" target=" " id="btn-link1"><button type="button" class="btn btn-secondary">Learn More & Book</button></a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <div id="events" class="panel-body"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-            <!-- fix footer positioning -->
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="assets/js/docu.js"></script>
 <script src="assets/js/page2.js"></script>
+<script src="assets/js/docu.js"></script>
 <script src="assets/js/script.js"></script>
+
 
 </html>
