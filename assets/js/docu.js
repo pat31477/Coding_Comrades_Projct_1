@@ -24,7 +24,7 @@ let restaurantFormSubmitHandler = function (event) {
 
     console.log(event.target)
 
-      foodChoiceValue = foodChoice.value
+    foodChoiceValue = foodChoice.value
 
     zipCode = userInput.value
 
@@ -87,8 +87,11 @@ let displayData = function (cuisinesData) {
         restaurantDiv.className += 'list-group-item'
         restaurantDiv.style.margin = '3rem';
         h4.textContent = uniqueRestaurants[i].restaurant_name
+        h4.setAttribute("style", "color: red;"); 
         p.textContent = uniqueRestaurants[i].address.formatted
+        p.setAttribute("style", "font-weight: bold");
         p2.textContent = uniqueRestaurants[i].restaurant_phone
+        p2.setAttribute("style", "font-weight: bold");
         restaurantDiv.setAttribute("href", directRestaurant)
         restaurantDiv.setAttribute('target', '_blank')
         restaurantDiv.appendChild(h4)
@@ -98,7 +101,7 @@ let displayData = function (cuisinesData) {
 
         if (directRestaurant === "") {
             h5.textContent = "NO WEBSITE!"
-            h5.setAttribute("style", "color: red;");  
+            h5.setAttribute("style", "color: orange;");  
             restaurantDiv.appendChild(h5)
             foodContainer.appendChild(restaurantDiv)
         }
