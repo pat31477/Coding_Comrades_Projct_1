@@ -1,13 +1,24 @@
   .modal-header, h4, .close {
-    background-color: rgb(110, 23, 128);
-    color:white !important;
+    /*background-color: rgb(110, 23, 128);*/
+    /* color:white !important; */
     text-align: center;
     font-size: 30px;
+    font-weight: bold;
+    -webkit-text-stroke: 1px rgb(40, 89, 250);
     border-radius: 15px 15px 0 0;
     font-family:'Courier New', Courier, monospace;
-    
     font-style: oblique;
+    color: rgb(121, 248, 231, 0.918);
+    text-transform: uppercase;
+    background-image: url(../../img/concrete_texture_dark.jpg!d);
+    cursor: pointer; /* Pointer/hand icon */
     
+  }
+
+  .modal-header {
+    border: 0.2rem solid rgb(44, 53, 177);
+    border-radius: 1rem;
+
   }
  
 
@@ -16,15 +27,14 @@
     font-size: 25px;
     font-style: oblique;
     color: rgb(149, 247, 149);
-    
     border: 0.2rem solid rgb(121, 248, 231, 0.918);
     border-radius: 1rem;
     text-transform: uppercase;
     animation: flicker 2.5s infinite alternate; 
     cursor: pointer; /* Pointer/hand icon */
     width: 17.5%; 
-float: right;
-margin-top: -60px;
+    float: right;
+    margin-top: -60px;
 
   }
     #enterBtn::-moz-selection {
@@ -58,20 +68,26 @@ label {
 margin-left: 85px;
 margin-top: 300px;
 width: max-content;
-border-radius: 20px;
+border: 0.2rem solid rgb(44, 53, 177);
+border-radius: 1.2rem;
+/* background-color: rgb(121, 248, 231, 0.918); */
+background-image: url(../../img/steel.JPG);
+background-size: 70%;
+background-attachment: fixed;
+
+}
+
+input {
+  color:#fff,
 }
 
 .btn-success {
 color: #fff;
-background-color: #ff0000;
+background-color:#000000;
 border-color: #fff
 }
 
-.btn-success:hover {
-color: #fff;
-background-color:#ff0000;
-border-color: #fff;
-}
+
 
 
 
@@ -113,7 +129,7 @@ h3 {
 color: rgba(121, 248, 231, 0.918);
 padding: .5px 78px 1px;
 font-size: 31px;
--webkit-text-stroke: 1px rgb(73, 25, 187);
+-webkit-text-stroke: 1px rgb(40, 89, 250);
 }
 
 h1 {
