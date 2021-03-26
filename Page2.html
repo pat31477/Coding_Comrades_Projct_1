@@ -33,15 +33,21 @@
     <div id="wrap" class="mainContent">
         <div class="container searchContent">
             <form class="userInput">
-                <form id="event-search-form">
+                
 
                     <div class="form-row" style ="display: inline;">
                         <div class="col-12 col-md-9 mb-2 mb-md-0 citySearch" >
                         
-                            <label for="foodChoice">City Search:</label>
+                            <label for="foodChoice">Search By City:</label>
                         
                             <input id="user-search" class="form-control form-control-lg" name="search-input"
                                 type="text" placeholder="Search">
+
+                                <label for="foodChoice">Zipcode:</label>
+                        
+                            <input id="user-search" class="form-control form-control-lg" name="postal-input"
+                                type="text" placeholder="Search">
+                       
                        
 
                                
@@ -50,7 +56,7 @@
                                
                         </div>
                     </div>
-                </form>
+                
                 <div class="form-group foodChoice">
                     <label for="foodChoice">Type of Food:</label>
                     <select class="form-control foodChoice" id="foodChoice">
@@ -68,7 +74,7 @@
                 </div>
                     <div class="form-group zipCode">
                         <label for="zipCodeInput">Zip Code:</label>
-                        <input type="text" class="form-control" id="zipCodeInput" maxlength="5" placeholder="Zip Code">
+                        <input type="text" class="form-control" id="zipCodeInput"  maxlength="5" placeholder="Zip Code">
                     </div>
             </form>
             <div class="previousSearch" id="previous-search-el"></div>
@@ -125,6 +131,7 @@
                                         <h3 class="panel-title"> <a href="#" class="btn btn-primary">Let's Do
                                                 something</a></h3>
                                     </div>
+                                    <!-- put id on panel body-->
                                     <div class="panel-body">
 
                                         <div id="events" class="list-group">
