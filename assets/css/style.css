@@ -9,7 +9,6 @@
     font-family:'Courier New', Courier, monospace;
     font-style: oblique;
     color: rgb(121, 248, 231, 0.918);
-    
     text-transform: uppercase;
     background-image: url(../../img/concrete_texture_dark.jpg!d);
     cursor: pointer; /* Pointer/hand icon */
@@ -69,20 +68,26 @@ label {
 margin-left: 85px;
 margin-top: 300px;
 width: max-content;
-border-radius: 20px;
+border: 0.2rem solid rgb(44, 53, 177);
+border-radius: 1.2rem;
+/* background-color: rgb(121, 248, 231, 0.918); */
+background-image: url(../../img/steel.JPG);
+background-size: 70%;
+background-attachment: fixed;
+
+}
+
+input {
+  color:#fff,
 }
 
 .btn-success {
 color: #fff;
-background-color: #ff0000;
+background-color:#000000;
 border-color: #fff
 }
 
-.btn-success:hover {
-color: #fff;
-background-color:#ff0000;
-border-color: #fff;
-}
+
 
 
 
