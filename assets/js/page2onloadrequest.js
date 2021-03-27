@@ -20,7 +20,7 @@ $(function() {
         }
         restaurantFormSubmitHandler(fakeEvent);
         formSubmitHandler(fakeEvent);
-    }
+    } 
 
 
 
