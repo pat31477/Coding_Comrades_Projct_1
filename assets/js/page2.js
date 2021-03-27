@@ -6,7 +6,7 @@ let eventTitle = $("#event-title");
 let eventSearchForm = $(".userInput");
 let userInputEl = $('input[name="search-input"]');
 let postalcodeInputEl = $('input[name="postal-input"]');
-let previousSearchEl = $('#previous-search-el');
+previousSearchEl = $('#previous-search-el');
 let nextHtmlPage = 'Page2.html';
 let enterBtn = $("#enterBtn");
 let userSearchEl;
