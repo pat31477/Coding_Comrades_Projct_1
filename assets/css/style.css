@@ -67,7 +67,7 @@ label {
 
 .modal-content {
   margin-left: 62px;
-margin-top: 281px;
+  margin-top: 281px;
   width: inherit;
   border: 0.2rem solid rgb(44, 53, 177);
   border-radius: 1.2rem;
@@ -86,13 +86,13 @@ margin-top: 281px;
 
 .btn-success {
 color: #fff;
-background-color: #ff0000;
+background-color: #3f3f3f;
 border-color: #fff
 }
 
 .btn-success:hover {
 color: #fff;
-background-color:#ff0000;
+background-color:#2dc453;
 border-color: #fff;
 }
 
