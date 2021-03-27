@@ -107,6 +107,14 @@ width: 100%;
 border-radius: 15px;
 }
 
+.container {
+ 
+    padding-right: 32px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 104px;
+    }
 
 
 
@@ -215,7 +223,9 @@ margin-right: 373px;
       
   }
   .modal-content{
-    margin-left: 30px;
+    margin-right: 17px;
+    margin-left: 22px;
+    margin-top: 57px;
   }
   }
 
@@ -247,4 +257,17 @@ margin-right: 373px;
         margin-right: 75px;
         }
           
+      }
+
+
+      @media (max-width: 320px) {
+        .content{
+
+       
+      justify-content: center;
+
+display: flex;
+width: 100%;
+border-radius: 15px;
+        }
       }
