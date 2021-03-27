@@ -35,6 +35,7 @@ let userSearchEl;
     previousSearchEl.append(button1);
     button1.on('click', function (event) {
       event.stopPropagation();
+      event.preventDefault()
       // let eventButton = $(this).val();
       getEvents(userSearchEl, "");
     })
@@ -50,7 +51,7 @@ let userSearchEl;
   //big daddy function doing the heavy lifting. sets the values of the user inputs. checks to see if they were, if so run the fetch 
   const formSubmitHandler = (event) => {
     event.preventDefault()
-    event.stopPropagation();
+    
     // event.preventDefault();
     
    
@@ -178,9 +179,6 @@ let userSearchEl;
 
 //event listener calling removeItem function
   clearHistoryButton.on("click", removeItem);
-
-
-
 
   //added letsGoBtn "id" to html and my a variable for this. added an event listener that will redirect to
   //page2 html with their original inputs
