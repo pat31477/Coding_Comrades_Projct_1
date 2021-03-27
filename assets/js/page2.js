@@ -1,28 +1,18 @@
-//FIX: remove Jquery
+
 let letsGoBtn = $("#letsGoBtn");
-//let nextHtmlPage = 'Page2.html';
 let eventId = $("#event-id");
 let eventText = $("#event-text");
 let eventTitle = $("#event-title");
 let eventSearchForm = $(".userInput");
-console.log(eventSearchForm)
 let userInputEl = $('input[name="search-input"]');
-console.log(userInputEl)
-//let userSearchEl = userInputEl.val();
 let postalcodeInputEl = $('input[name="postal-input"]');
 let previousSearchEl = $('#previous-search-el');
 let nextHtmlPage = 'Page2.html';
 let enterBtn = $("#enterBtn");
 let userSearchEl;
-let events = [];
-
-// import zipCode from './docu';
-
-console.log(zipCode)
 
 
 
-// $(document).ready(function () {
 
   $("#myBtn").click(function () {
     $("#myModal").modal();
@@ -32,7 +22,6 @@ console.log(zipCode)
   $("#enterBtn").click(function () {
     $("#myModal").modal();
   });
-
 
 
   const savedSearches = (userSearchEl) => {
@@ -45,7 +34,7 @@ console.log(zipCode)
     width: "100%",
     display: 'block',
     fontSize: '20px'});
-    button1.text(userSearchEl[0].toUpperCase() + userSearchEl.substring(1).toLowerCase());
+    button1.text(userSearchEl);
     previousSearchEl.append(button1);
 
     button1.on('click', function (event) {
@@ -53,7 +42,7 @@ console.log(zipCode)
       let eventButton = $(this).val();
      
       getEvents(userSearchEl, "");
-      //displayEvents(eventButton)
+     
 
     })
 
@@ -63,33 +52,24 @@ console.log(zipCode)
   storedEvent = JSON.parse(storedEvent) || [];
   for (var i = 0; i < storedEvent.length; i++) {
     savedSearches(storedEvent[i]);
-    //savedSearches(storedZip[i]);
   }
 
-
-
+  // let storedZip = localStorage.getItem("zipcodes");
+  // storedZip = JSON.parse(parse)
 
 
 
   const formSubmitHandler = (event) => {
-
-    //console.log(event.target)
     event.preventDefault();
-    // event.stopPropagation();
-
+   
     let userSearchEl = userInputEl.val().trim();
     let postalcode = postalcodeInputEl.val().trim();
 
-
-
     if (userSearchEl || postalcode) {
      
-
       getEvents(userSearchEl, postalcode);
       userInputEl.val("");
-      postalcodeInputEl.val("")
-
-      
+      postalcodeInputEl.val("");
     } else {
       $('#submit-btn').disabled = true;
 
@@ -98,36 +78,24 @@ console.log(zipCode)
     let storedEvent = localStorage.getItem("events");
     storedEvent = JSON.parse(storedEvent) || [];
     storedEvent.push(userSearchEl);
-
     let stringifiedEvents = JSON.stringify(storedEvent);
-
     localStorage.setItem("events", stringifiedEvents);
-
 
   }
 
 
-
   const getEvents = (userSearchEl, postalcode) => {
-    
     let apiKey = "sHs8K7xQHlo3RLonwkGtJsj8wixf5F5J";
     let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&sort=date,asc&locale'en-us,*'&keyword=${userSearchEl}&postalCode=${postalcode}&countryCode=US&startDateTime"03/2021"&endDateTime"05/21/2021"&apikey=${apiKey}`;
     
-   
-
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        
         let events = data._embedded
         displayEvents(events, userSearchEl, postalcode);
-
       })
-
   }
-
-
 
   //displaying data from the fetch request of Ticketmaster's api
   const displayEvents = (events, userSearchEl, postalcode) => {
@@ -135,7 +103,6 @@ console.log(zipCode)
     
     
     let newEvents = events.events;
-    
     let uniqueEvents = Array.from(new Set(newEvents.map(a => a.name)))
       .map(name => {
         return newEvents.find(a => a.name === name)
@@ -183,7 +150,7 @@ console.log(zipCode)
       eventDiv.append(eventP2)
 
       eventP3.attr("style", "font-weight: bold", "font-size: 4rem;");
-      eventP3.text("Address: " + venueAddress + venueCity + " " + ", " + " " + venueState)
+      eventP3.text("Address: " + venueAddress + " " + venueCity + " " + ", " + " " + venueState)
       eventDiv.append(eventP3)
       eventBody.append(eventDiv)
   
@@ -211,7 +178,6 @@ console.log(zipCode)
     
     localStorage.clear();
     $(event.target).siblings().remove();
-    //location.reload();
     window.location.href = "Page2.html";
 
   }
@@ -228,20 +194,14 @@ console.log(zipCode)
     event.preventDefault();
     foodChoiceValue = $("#foodChoice1").val();
     zipCode = $('#zipCode').val();
-    console.log(foodChoiceValue)
-
-    console.log(zipCode)
     jQuery('#zipCode').load('Page2.html')
-
-
     window.location.href = "Page2.html?food=" + foodChoiceValue + "&zip=" + zipCode;
     formSubmitHandler();
-
-
   })
+
+
 
   $('#submit-btn').on("click", formSubmitHandler)
 
 
 
-// });
