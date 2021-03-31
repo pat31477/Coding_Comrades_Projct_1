@@ -2,7 +2,8 @@
 
 1. [ Description. ](#desc)
 2. [ Web Address. ](#web-address)
-3. [ Contributions. ](#contributions)
+3. [ Collaborators. ](#contributions)
+4. [ Licensing. ](#licensing)
 
 
 
@@ -18,6 +19,8 @@ As a user, I want to be able to search for food, drinks, entertainment or a comb
 As a user, I want to be able to select the type of food that I am interested in.
 As a user, I want should be able to click on the returned information and get more information if applicable.
 As a user, I want an application that I can view on my phone.
+
+This project is built with HTML, CSS, JavaScript, Jquery, BootStrap, and Thirda Party API's
 
 
 
@@ -40,14 +43,37 @@ As a user, I want an application that I can view on my phone.
 
 
 
-<a name="contributions"></a>
-## 3. Contributions
-Thank you to the following for their suggestions and insights.
+<a name="collaborators"></a>
+## 3. Collaborators
 
-Ben Durham
+* Ben Durham (https://github.com/bdurham227)
 
-Jason Barbanel
+* Jason Barbanel (https://github.com/Jbarbss)
 
-Patrick Walker
+* Takuya Matsumoto (https://github.com/TakuyaMats)
 
-Takuya Matsumoto
+* Patrick Walker (https://github.com/pat31477)
+
+<a name="licensing"></a>
+## 4. Licensing
+
+Copyright (c) BD, TM, JB and PW
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
