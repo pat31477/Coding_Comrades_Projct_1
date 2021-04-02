@@ -36,6 +36,9 @@ This project is built with HTML, CSS, JavaScript, Jquery, BootStrap, and Thirda 
 
 ### Deployed application screen shot
 
+![ScreenShot](img/LandingPageDemo.gif  "Tour of Applicaiton")
+
+
 
 ![ScreenShot](img/Application-tour.gif  "Tour of Applicaiton")
 
